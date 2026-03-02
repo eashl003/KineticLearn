@@ -26,7 +26,7 @@ export function HomePage() {
         </Link>
         <Link to="/code-assembly" className="home-card">
           <h2>Code Assembly! 🧩</h2>
-          <p>Assemble Python code from token fragments using hand gestures or click/tap.</p>
+          <p>Assemble Python code from token fragments using hand gestures and click/tap.</p>
         </Link>
         <Link to="/problems" className="home-card">
           <h2>Problems Mode 📝</h2>

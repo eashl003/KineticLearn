@@ -1,0 +1,14 @@
+{
+  "schemaVersion": 1,
+  "name": "Two Pointers",
+  "description": "Questions on two-pointer technique for arrays and strings.",
+  "language": "python",
+  "topic": "algorithms",
+  "questions": [
+    {"id": "py-tp-001", "topic": "algorithms", "question": "Two pointers are often used to:", "choices": ["Sort a list", "Traverse from both ends or at different speeds", "Implement recursion", "Allocate memory"], "answerIndex": 1, "explanation": "Two pointers can move toward each other (e.g. two-sum on sorted array) or at different speeds (e.g. cycle detection)."},
+    {"id": "py-tp-002", "topic": "algorithms", "question": "For a sorted array, two-sum can be solved with two pointers in:", "choices": ["O(n^2)", "O(n)", "O(log n)", "O(1)"], "answerIndex": 1, "explanation": "One pointer at start, one at end; move based on whether sum is too small or too large — O(n)."},
+    {"id": "py-tp-003", "topic": "algorithms", "question": "Checking if a string is a palindrome is often done with:", "choices": ["One pointer", "Two pointers at both ends", "A stack only", "Binary search"], "answerIndex": 1, "explanation": "Two pointers at left and right compare characters and move inward."},
+    {"id": "py-tp-004", "topic": "algorithms", "question": "Fast and slow pointers are used for:", "choices": ["Sorting", "Detecting a cycle in a linked list", "Binary search", "Hash lookup"], "answerIndex": 1, "explanation": "Floyd's cycle detection: slow moves 1 step, fast moves 2; if they meet, there's a cycle."},
+    {"id": "py-tp-005", "topic": "algorithms", "question": "Removing duplicates in-place from a sorted array can use:", "choices": ["Only one pointer", "Two pointers: read and write", "A set and copy", "Recursion"], "answerIndex": 1, "explanation": "One pointer reads, one writes; write only when the value is new (e.g. different from previous)."}
+  ]
+}

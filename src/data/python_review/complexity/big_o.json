@@ -1,0 +1,14 @@
+{
+  "schemaVersion": 1,
+  "name": "Big O",
+  "description": "Questions on Big O notation and asymptotic behavior.",
+  "language": "python",
+  "topic": "complexity",
+  "questions": [
+    {"id": "py-bigo-001", "topic": "complexity", "question": "Big O describes:", "choices": ["Exact run time", "Upper bound on growth as input grows", "Best case only", "Average case only"], "answerIndex": 1, "explanation": "Big O is an asymptotic upper bound: growth rate in the limit."},
+    {"id": "py-bigo-002", "topic": "complexity", "question": "O(n) + O(n) is written as:", "choices": ["O(2n)", "O(n)", "O(n^2)", "O(n/2)"], "answerIndex": 1, "explanation": "Constants are dropped; O(2n) = O(n)."},
+    {"id": "py-bigo-003", "topic": "complexity", "question": "Which grows faster asymptotically?", "choices": ["O(log n)", "O(n)", "O(1)", "O(n) and O(log n) same"], "answerIndex": 1, "explanation": "As n grows, n grows faster than log n; O(n) dominates O(log n)."},
+    {"id": "py-bigo-004", "topic": "complexity", "question": "O(n log n) is typical for:", "choices": ["Linear search", "Comparison-based sorting", "Hash lookup", "Appending to list"], "answerIndex": 1, "explanation": "Optimal comparison-based sorting is Theta(n log n)."},
+    {"id": "py-bigo-005", "topic": "complexity", "question": "We say algorithm A is O(n^2). That means:", "choices": ["It always runs in exactly n^2 steps", "For large n, runtime is bounded above by a constant times n^2", "It is faster than O(n)", "It uses n^2 bytes"], "answerIndex": 1, "explanation": "O(n^2) means runtime <= c*n^2 for some constant c and large n."}
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "schemaVersion": 1,
+  "name": "Memoization",
+  "description": "Questions on caching function results and lru_cache.",
+  "language": "python",
+  "topic": "hash_maps",
+  "questions": [
+    {"id": "py-memo-001", "topic": "hash_maps", "question": "Memoization is used to:", "choices": ["Sort data", "Cache function results to avoid recomputation", "Count elements", "Search faster"], "answerIndex": 1, "explanation": "Memoization stores results for given arguments and returns the cached value on repeated calls."},
+    {"id": "py-memo-002", "topic": "hash_maps", "question": "functools.lru_cache(maxsize=128) by default:", "choices": ["Caches 128 least recently used items", "Caches 128 most recently used items", "Caches unlimited items", "Caches only the last call"], "answerIndex": 1, "explanation": "LRU stands for Least Recently Used; when full, the least recently used entry is evicted, so the cache keeps the most recently used."},
+    {"id": "py-memo-003", "topic": "hash_maps", "question": "For lru_cache to work, arguments must be:", "choices": ["Lists", "Hashable", "Mutable", "Strings only"], "answerIndex": 1, "explanation": "Cache keys are derived from arguments; they must be hashable (e.g. no lists as args)."},
+    {"id": "py-memo-004", "topic": "hash_maps", "question": "Manual memoization for fib(n) typically uses:", "choices": ["A list", "A dict mapping n to fib(n)", "A set", "A tuple"], "answerIndex": 1, "explanation": "A dict maps n to the computed fib(n) so repeated n returns the cached value."},
+    {"id": "py-memo-005", "topic": "hash_maps", "question": "lru_cache(None) means:", "choices": ["No caching", "Unbounded cache", "Cache size 0", "Default 128"], "answerIndex": 1, "explanation": "maxsize=None means the cache can grow without bound (no LRU eviction)."}
+  ]
+}

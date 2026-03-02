@@ -1,0 +1,14 @@
+{
+  "schemaVersion": 1,
+  "name": "Numbers",
+  "description": "Questions on int, float, and numeric operations.",
+  "language": "python",
+  "topic": "data_types",
+  "questions": [
+    {"id": "py-num-001", "topic": "data_types", "question": "In Python 3, 3 / 2 equals:", "choices": ["1", "1.5", "2", "1.0"], "answerIndex": 1, "explanation": "In Python 3, / is true division and returns a float."},
+    {"id": "py-num-002", "topic": "data_types", "question": "3 // 2 equals:", "choices": ["1.5", "1", "2", "0"], "answerIndex": 1, "explanation": "// is floor division; 3 // 2 is 1."},
+    {"id": "py-num-003", "topic": "data_types", "question": "Which can represent arbitrarily large integers?", "choices": ["float", "int", "decimal.Decimal", "numpy.int64"], "answerIndex": 1, "explanation": "Python's int has arbitrary precision; float has limited range and precision."},
+    {"id": "py-num-004", "topic": "data_types", "question": "0.1 + 0.2 == 0.3 in Python typically evaluates to:", "choices": ["True", "False", "Error", "None"], "answerIndex": 1, "explanation": "Floats are binary; 0.1 and 0.2 are not exact, so 0.1 + 0.2 may not equal 0.3 exactly."},
+    {"id": "py-num-005", "topic": "data_types", "question": "For financial calculations, a better choice than float is often:", "choices": ["int only", "decimal.Decimal", "complex", "fractions only"], "answerIndex": 1, "explanation": "decimal.Decimal provides decimal floating point and avoids float representation errors."}
+  ]
+}

@@ -1,0 +1,169 @@
+{
+  "schemaVersion": 1,
+  "name": "Python Tuples",
+  "description": "Questions on tuples: definition, access, update, unpack, loop, join, and immutability.",
+  "language": "python",
+  "topic": "data_structures",
+  "questions": [
+    {
+      "id": "py-tup-001",
+      "topic": "data_structures",
+      "question": "Which of these is immutable?",
+      "choices": ["list", "dict", "tuple", "set"],
+      "answerIndex": 2,
+      "explanation": "Tuples are immutable; you cannot add, remove, or change elements after creation."
+    },
+    {
+      "id": "py-tup-002",
+      "topic": "data_structures",
+      "question": "What is (3)?",
+      "choices": ["A tuple containing 3", "The integer 3", "Syntax error", "A one-element tuple"],
+      "answerIndex": 1,
+      "explanation": "(3) is just 3 in parentheses. A one-element tuple requires a trailing comma: (3,)."
+    },
+    {
+      "id": "py-tup-003",
+      "topic": "data_structures",
+      "question": "Why might you use a tuple as a dict key instead of a list?",
+      "choices": ["Tuples are faster", "Lists are not hashable", "Tuples use less memory", "Dicts only accept tuples"],
+      "answerIndex": 1,
+      "explanation": "Dict keys must be hashable. Tuples are hashable when their elements are; lists are mutable and unhashable."
+    },
+    {
+      "id": "py-tup-004",
+      "topic": "data_structures",
+      "question": "What does tuple([1, 2, 3]) return?",
+      "choices": ["[1, 2, 3]", "(1, 2, 3)", "((1, 2, 3))", "None"],
+      "answerIndex": 1,
+      "explanation": "tuple() converts an iterable into a tuple; list [1,2,3] becomes (1, 2, 3)."
+    },
+    {
+      "id": "py-tup-005",
+      "topic": "data_structures",
+      "question": "Can a tuple contain a list?",
+      "choices": ["No", "Yes", "Only empty lists", "Only in Python 3.9+"],
+      "answerIndex": 1,
+      "explanation": "Tuples can hold any objects. The tuple itself remains immutable, but a list inside can be mutated."
+    },
+    {
+      "id": "py-tup-006",
+      "topic": "data_structures",
+      "question": "What best describes a Python tuple?",
+      "choices": ["Mutable sequence", "Ordered, immutable sequence", "Unordered collection", "Same as a list"],
+      "answerIndex": 1,
+      "explanation": "A tuple is an ordered, immutable sequence. Order is preserved and elements cannot be added, removed, or changed after creation."
+    },
+    {
+      "id": "py-tup-007",
+      "topic": "data_structures",
+      "question": "For t = (10, 20, 30), what is t[1]?",
+      "choices": ["10", "20", "30", "IndexError"],
+      "answerIndex": 1,
+      "explanation": "Tuple indexing is zero-based. t[0] is 10, t[1] is 20, t[2] is 30."
+    },
+    {
+      "id": "py-tup-008",
+      "topic": "data_structures",
+      "question": "For t = (1, 2, 3, 4, 5), what is t[1:4]?",
+      "choices": ["(1, 2, 3, 4)", "(2, 3, 4)", "(2, 3)", "(1, 2, 3)"],
+      "answerIndex": 1,
+      "explanation": "Slicing [start:stop] includes start and excludes stop. t[1:4] gives elements at indices 1, 2, 3 — the tuple (2, 3, 4)."
+    },
+    {
+      "id": "py-tup-009",
+      "topic": "data_structures",
+      "question": "For t = (1, 2, 3), what does t[-1] return?",
+      "choices": ["1", "2", "3", "Error"],
+      "answerIndex": 2,
+      "explanation": "Negative indices count from the end. t[-1] is the last element (3), t[-2] is 2, t[-3] is 1."
+    },
+    {
+      "id": "py-tup-010",
+      "topic": "data_structures",
+      "question": "If t = (1, 2, 3), what happens when you do t[0] = 5?",
+      "choices": ["t becomes (5, 2, 3)", "TypeError", "ValueError", "Nothing; tuples are mutable"],
+      "answerIndex": 1,
+      "explanation": "Tuples are immutable. Assigning to an index (t[0] = 5) raises TypeError. You must create a new tuple instead."
+    },
+    {
+      "id": "py-tup-011",
+      "topic": "data_structures",
+      "question": "How do you effectively \"change\" one element in a tuple?",
+      "choices": ["Use t[i] = value", "Use t.update(i, value)", "Create a new tuple (e.g. by slicing and concatenation)", "Tuples cannot be modified in any way"],
+      "answerIndex": 2,
+      "explanation": "You cannot mutate a tuple. To get a tuple with one value changed, build a new one: t[:i] + (new_val,) + t[i+1:], or convert to list and back."
+    },
+    {
+      "id": "py-tup-012",
+      "topic": "data_structures",
+      "question": "After a, b = (1, 2), what are a and b?",
+      "choices": ["a=(1,2), b undefined", "a=1, b=2", "a and b are both (1,2)", "ValueError"],
+      "answerIndex": 1,
+      "explanation": "Tuple unpacking assigns each value to the corresponding variable. a, b = (1, 2) gives a=1 and b=2. The number of variables must match the number of elements (or use *rest)."
+    },
+    {
+      "id": "py-tup-013",
+      "topic": "data_structures",
+      "question": "After first, *rest = (1, 2, 3, 4), what is rest?",
+      "choices": ["(1, 2, 3, 4)", "(2, 3, 4)", "1", "SyntaxError"],
+      "answerIndex": 1,
+      "explanation": "The *rest captures the remaining elements into a list. So first=1 and rest=[2, 3, 4]. This is extended iterable unpacking (Python 3)."
+    },
+    {
+      "id": "py-tup-014",
+      "topic": "data_structures",
+      "question": "What does a, b = b, a do (assuming a and b are bound)?",
+      "choices": ["Nothing", "Swaps the values of a and b", "Creates a tuple (b, a)", "Raises an error"],
+      "answerIndex": 1,
+      "explanation": "The right-hand side (b, a) is evaluated first, then unpacked into a and b. So the values are swapped without a temporary variable."
+    },
+    {
+      "id": "py-tup-015",
+      "topic": "data_structures",
+      "question": "In for x in (1, 2, 3):, what does x take?",
+      "choices": ["Indices 0, 1, 2", "The tuple (1, 2, 3) each time", "The values 1, 2, 3 in turn", "A (index, value) pair"],
+      "answerIndex": 2,
+      "explanation": "Iterating over a tuple yields each element. So x is 1, then 2, then 3. Use enumerate(t) if you need indices."
+    },
+    {
+      "id": "py-tup-016",
+      "topic": "data_structures",
+      "question": "What does \" \".join((\"a\", \"b\", \"c\")) return?",
+      "choices": ["(\"a \", \"b \", \"c\")", "\"a b c\"", "Error: join is for lists only", "(\"a\", \"b\", \"c\")"],
+      "answerIndex": 1,
+      "explanation": "str.join() accepts any iterable of strings, including tuples. \" \".join((\"a\",\"b\",\"c\")) returns \"a b c\"."
+    },
+    {
+      "id": "py-tup-017",
+      "topic": "data_structures",
+      "question": "How do you create a tuple containing only the integer 3?",
+      "choices": ["(3)", "(3,) with a trailing comma", "[3]", "tuple(3)"],
+      "answerIndex": 1,
+      "explanation": "(3) is just the integer 3 in parentheses. A one-element tuple requires a trailing comma: (3,)."
+    },
+    {
+      "id": "py-tup-018",
+      "topic": "data_structures",
+      "question": "What does (1, 2) + (3, 4) return?",
+      "choices": ["(1, 2, 3, 4)", "(4, 6)", "Error: tuples cannot be concatenated", "(1, 2)(3, 4)"],
+      "answerIndex": 0,
+      "explanation": "The + operator concatenates tuples and returns a new tuple. (1, 2) + (3, 4) is (1, 2, 3, 4). Original tuples are unchanged."
+    },
+    {
+      "id": "py-tup-019",
+      "topic": "data_structures",
+      "question": "When is a tuple hashable (e.g. usable as a dict key)?",
+      "choices": ["Always", "Never", "When all its elements are hashable", "Only when it has two elements"],
+      "answerIndex": 2,
+      "explanation": "A tuple is hashable only if every element is hashable. So (1, 2, \"a\") is hashable; (1, [2]) is not, because lists are unhashable."
+    },
+    {
+      "id": "py-tup-020",
+      "topic": "data_structures",
+      "question": "A function does return 1, 2. What type does it actually return?",
+      "choices": ["Two separate values", "A tuple (1, 2)", "SyntaxError", "int"],
+      "answerIndex": 1,
+      "explanation": "return 1, 2 returns a single tuple (1, 2). The comma makes it a tuple. The caller can use x = f() to get the tuple or a, b = f() to unpack."
+    }
+  ]
+}

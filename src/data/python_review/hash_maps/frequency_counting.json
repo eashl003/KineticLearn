@@ -1,0 +1,14 @@
+{
+  "schemaVersion": 1,
+  "name": "Frequency Counting",
+  "description": "Questions on counting elements with dict or Counter.",
+  "language": "python",
+  "topic": "hash_maps",
+  "questions": [
+    {"id": "py-freq-001", "topic": "hash_maps", "question": "collections.Counter is best used for:", "choices": ["Sorting lists", "Counting hashable elements", "Caching", "Binary search"], "answerIndex": 1, "explanation": "Counter counts occurrences of hashable elements and provides most_common(), etc."},
+    {"id": "py-freq-002", "topic": "hash_maps", "question": "To count character frequencies in a string s, a common pattern is:", "choices": ["Counter(s)", "count(s)", "dict(s)", "set(s)"], "answerIndex": 0, "explanation": "Counter(s) counts each character (or element in any iterable)."},
+    {"id": "py-freq-003", "topic": "hash_maps", "question": "Counter('aab').most_common(1) returns:", "choices": ["[('a', 2)]", "[('b', 1)]", "['a']", "2"], "answerIndex": 0, "explanation": "most_common(1) returns the single most common element and its count as a list of tuples."},
+    {"id": "py-freq-004", "topic": "hash_maps", "question": "Two strings are anagrams if their character counts:", "choices": ["Differ", "Are equal", "Are sorted", "Use a set"], "answerIndex": 1, "explanation": "Anagrams have the same character frequencies; comparing Counter(s1) == Counter(s2) works."},
+    {"id": "py-freq-005", "topic": "hash_maps", "question": "Building a frequency dict with a loop: d.get(x, 0) + 1 is used to:", "choices": ["Delete key x", "Increment count for x", "Set x to 0", "Append to list"], "answerIndex": 1, "explanation": "get(x,0)+1 increments the count for x, adding the key with count 1 if missing."}
+  ]
+}

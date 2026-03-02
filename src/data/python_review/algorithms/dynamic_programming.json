@@ -1,0 +1,14 @@
+{
+  "schemaVersion": 1,
+  "name": "Dynamic Programming",
+  "description": "Questions on DP, memoization, and overlapping subproblems.",
+  "language": "python",
+  "topic": "algorithms",
+  "questions": [
+    {"id": "py-dp-001", "topic": "algorithms", "question": "Dynamic programming is used when a problem has:", "choices": ["Only one solution", "Overlapping subproblems and optimal substructure", "No base case", "Infinite inputs"], "answerIndex": 1, "explanation": "DP applies when subproblems repeat (overlapping) and optimal solutions compose (optimal substructure)."},
+    {"id": "py-dp-002", "topic": "algorithms", "question": "Memoization typically uses which structure to cache results?", "choices": ["list", "dict", "tuple", "set"], "answerIndex": 1, "explanation": "A dict maps (e.g.) argument tuples to computed values for O(1) lookup."},
+    {"id": "py-dp-003", "topic": "algorithms", "question": "Bottom-up DP usually fills:", "choices": ["A recursive call stack", "A table (e.g. 1D or 2D array)", "A generator", "A tree"], "answerIndex": 1, "explanation": "Bottom-up builds solutions from smallest subproblems into a table, avoiding recursion."},
+    {"id": "py-dp-004", "topic": "algorithms", "question": "For the classic 'minimum path sum' grid, space can be optimized to O(n) by:", "choices": ["Using only one row (or column) at a time", "Using a set", "Using recursion only", "Not possible"], "answerIndex": 0, "explanation": "You can keep only the current and maybe previous row/column when filling the grid."},
+    {"id": "py-dp-005", "topic": "algorithms", "question": "functools.lru_cache is used for:", "choices": ["Caching module imports", "Memoizing function results", "Caching file reads", "Caching network requests"], "answerIndex": 1, "explanation": "lru_cache memoizes return values by arguments, often used for recursive DP."}
+  ]
+}

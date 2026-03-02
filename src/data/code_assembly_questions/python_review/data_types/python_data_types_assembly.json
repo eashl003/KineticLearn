@@ -1,0 +1,112 @@
+{
+  "schemaVersion": 1,
+  "name": "Python Data Types Assembly",
+  "description": "Assemble expressions involving strings, numbers, booleans, and mutability basics.",
+  "questions": [
+    {
+      "id": "dtype-assemble-001",
+      "question": "Assemble code to convert string s to integer.",
+      "tokens": ["int", "(", "s", ")", "float", "str"],
+      "validAnswers": [["int", "(", "s", ")"]],
+      "explanation": "Use int(s) to parse integer text."
+    },
+    {
+      "id": "dtype-assemble-002",
+      "question": "Assemble code to convert x to string.",
+      "tokens": ["str", "(", "x", ")", "repr", "int"],
+      "validAnswers": [["str", "(", "x", ")"]],
+      "explanation": "str() converts values to text."
+    },
+    {
+      "id": "dtype-assemble-003",
+      "question": "Assemble code to lowercase variable text.",
+      "tokens": ["text", ".lower", "(", ")", ".upper", ".title"],
+      "validAnswers": [["text", ".lower", "(", ")"]],
+      "explanation": "lower converts letters to lowercase."
+    },
+    {
+      "id": "dtype-assemble-004",
+      "question": "Assemble code to check if n is even.",
+      "tokens": ["n", "%", "2", "==", "0", "!=", "1"],
+      "validAnswers": [["n", "%", "2", "==", "0"]],
+      "explanation": "Even numbers have remainder 0 when divided by 2."
+    },
+    {
+      "id": "dtype-assemble-005",
+      "question": "Assemble code to round value x to two decimals.",
+      "tokens": ["round", "(", "x", ",", "2", ")", "int"],
+      "validAnswers": [["round", "(", "x", ",", "2", ")"]],
+      "explanation": "round(x, 2) keeps two decimal places."
+    },
+    {
+      "id": "dtype-assemble-006",
+      "question": "Assemble condition checking if name starts with 'A'.",
+      "tokens": ["name", ".startswith", "(", "'A'", ")", ".endswith", ".find"],
+      "validAnswers": [["name", ".startswith", "(", "'A'", ")"]],
+      "explanation": "startswith checks prefix matching."
+    },
+    {
+      "id": "dtype-assemble-007",
+      "question": "Assemble code to test if character ch is a digit.",
+      "tokens": ["ch", ".isdigit", "(", ")", ".isalpha", ".isalnum"],
+      "validAnswers": [["ch", ".isdigit", "(", ")"]],
+      "explanation": "isdigit returns True when all chars are digits."
+    },
+    {
+      "id": "dtype-assemble-008",
+      "question": "Assemble boolean negation of variable done.",
+      "tokens": ["not", "done", "!", "done", "~"],
+      "validAnswers": [["not", "done"]],
+      "explanation": "Python uses not for boolean negation."
+    },
+    {
+      "id": "dtype-assemble-009",
+      "question": "Assemble code to concatenate first and last name with a space.",
+      "tokens": ["first", "+", "' '", "+", "last", ".join", "(", ")"],
+      "validAnswers": [["first", "+", "' '", "+", "last"]],
+      "explanation": "String concatenation with + builds combined name."
+    },
+    {
+      "id": "dtype-assemble-010",
+      "question": "Assemble code to create a shallow copy of list nums.",
+      "tokens": ["nums", "[", ":", "]", ".copy", "(", ")", "deepcopy"],
+      "validAnswers": [["nums", "[", ":", "]"], ["nums", ".copy", "(", ")"]],
+      "explanation": "Both slicing and copy() produce a shallow list copy."
+    },
+    {
+      "id": "dtype-assemble-011",
+      "question": "Assemble code to check if object x is None.",
+      "tokens": ["x", "is", "None", "==", "null", "!="],
+      "validAnswers": [["x", "is", "None"]],
+      "explanation": "is None is the canonical None check."
+    },
+    {
+      "id": "dtype-assemble-012",
+      "question": "Assemble code to compute absolute value of n.",
+      "tokens": ["abs", "(", "n", ")", "math", ".fabs"],
+      "validAnswers": [["abs", "(", "n", ")"]],
+      "explanation": "abs returns absolute magnitude."
+    },
+    {
+      "id": "dtype-assemble-013",
+      "question": "Assemble code to join list parts with '-' separator.",
+      "tokens": ["'-'", ".join", "(", "parts", ")", "+", ".concat"],
+      "validAnswers": [["'-'", ".join", "(", "parts", ")"]],
+      "explanation": "Separator.join(list) is idiomatic string joining."
+    },
+    {
+      "id": "dtype-assemble-014",
+      "question": "Assemble code to parse floating number from text s.",
+      "tokens": ["float", "(", "s", ")", "int", "str"],
+      "validAnswers": [["float", "(", "s", ")"]],
+      "explanation": "float parses decimal numeric strings."
+    },
+    {
+      "id": "dtype-assemble-015",
+      "question": "Assemble condition to check if value x is truthy and y is truthy.",
+      "tokens": ["if", "x", "and", "y", ":", "or", "not"],
+      "validAnswers": [["if", "x", "and", "y", ":"]],
+      "explanation": "and requires both operands to be truthy."
+    }
+  ]
+}

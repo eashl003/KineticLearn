@@ -1,0 +1,112 @@
+{
+  "schemaVersion": 1,
+  "name": "Pythonic Patterns Assembly",
+  "description": "Assemble idiomatic Python snippets with comprehensions and built-ins.",
+  "questions": [
+    {
+      "id": "pp-assemble-001",
+      "question": "Assemble list comprehension for squares of nums.",
+      "tokens": ["[", "x", "**", "2", "for", "x", "in", "nums", "]"],
+      "validAnswers": [["[", "x", "**", "2", "for", "x", "in", "nums", "]"]],
+      "explanation": "List comprehensions compactly transform iterables."
+    },
+    {
+      "id": "pp-assemble-002",
+      "question": "Assemble list comprehension for even values from nums.",
+      "tokens": ["[", "x", "for", "x", "in", "nums", "if", "x", "%", "2", "==", "0", "]"],
+      "validAnswers": [["[", "x", "for", "x", "in", "nums", "if", "x", "%", "2", "==", "0", "]"]],
+      "explanation": "Comprehensions can include an inline if filter."
+    },
+    {
+      "id": "pp-assemble-003",
+      "question": "Assemble dict comprehension mapping x to x squared.",
+      "tokens": ["{", "x", ":", "x", "**", "2", "for", "x", "in", "nums", "}"],
+      "validAnswers": [["{", "x", ":", "x", "**", "2", "for", "x", "in", "nums", "}"]],
+      "explanation": "Dict comprehensions build key-value maps."
+    },
+    {
+      "id": "pp-assemble-004",
+      "question": "Assemble set comprehension that lowercases words.",
+      "tokens": ["{", "w", ".lower", "(", ")", "for", "w", "in", "words", "}"],
+      "validAnswers": [["{", "w", ".lower", "(", ")", "for", "w", "in", "words", "}"]],
+      "explanation": "Set comprehensions deduplicate transformed results."
+    },
+    {
+      "id": "pp-assemble-005",
+      "question": "Assemble lambda that doubles x.",
+      "tokens": ["lambda", "x", ":", "x", "*", "2", "+", "1"],
+      "validAnswers": [["lambda", "x", ":", "x", "*", "2"]],
+      "explanation": "lambda defines a small anonymous function."
+    },
+    {
+      "id": "pp-assemble-006",
+      "question": "Assemble map call applying str to values.",
+      "tokens": ["map", "(", "str", ",", "values", ")", "filter", "list"],
+      "validAnswers": [["map", "(", "str", ",", "values", ")"]],
+      "explanation": "map applies a function over an iterable."
+    },
+    {
+      "id": "pp-assemble-007",
+      "question": "Assemble filter call that keeps truthy values from vals.",
+      "tokens": ["filter", "(", "None", ",", "vals", ")", "map", "zip"],
+      "validAnswers": [["filter", "(", "None", ",", "vals", ")"]],
+      "explanation": "filter(None, vals) removes falsy entries."
+    },
+    {
+      "id": "pp-assemble-008",
+      "question": "Assemble for-loop using enumerate on items.",
+      "tokens": ["for", "i", ",", "item", "in", "enumerate", "(", "items", ")", ":"],
+      "validAnswers": [["for", "i", ",", "item", "in", "enumerate", "(", "items", ")", ":"]],
+      "explanation": "enumerate yields index-value pairs."
+    },
+    {
+      "id": "pp-assemble-009",
+      "question": "Assemble for-loop using zip over names and scores.",
+      "tokens": ["for", "name", ",", "score", "in", "zip", "(", "names", ",", "scores", ")", ":"],
+      "validAnswers": [["for", "name", ",", "score", "in", "zip", "(", "names", ",", "scores", ")", ":"]],
+      "explanation": "zip iterates multiple lists in lockstep."
+    },
+    {
+      "id": "pp-assemble-010",
+      "question": "Assemble sorted call with lowercase key.",
+      "tokens": ["sorted", "(", "names", ",", "key", "=", "str", ".lower", ")", ".sort"],
+      "validAnswers": [["sorted", "(", "names", ",", "key", "=", "str", ".lower", ")"]],
+      "explanation": "The key function controls sort comparison."
+    },
+    {
+      "id": "pp-assemble-011",
+      "question": "Assemble swap assignment for a and b.",
+      "tokens": ["a", ",", "b", "=", "b", ",", "a", "temp"],
+      "validAnswers": [["a", ",", "b", "=", "b", ",", "a"]],
+      "explanation": "Tuple unpacking swaps values without temp variable."
+    },
+    {
+      "id": "pp-assemble-012",
+      "question": "Assemble starred unpacking to capture first and rest.",
+      "tokens": ["first", ",", "*", "rest", "=", "items", "(", ")"],
+      "validAnswers": [["first", ",", "*", "rest", "=", "items"]],
+      "explanation": "Starred target collects remaining values."
+    },
+    {
+      "id": "pp-assemble-013",
+      "question": "Assemble any() check for negative values in nums.",
+      "tokens": ["any", "(", "x", "<", "0", "for", "x", "in", "nums", ")", "all"],
+      "validAnswers": [["any", "(", "x", "<", "0", "for", "x", "in", "nums", ")"]],
+      "explanation": "any returns True if at least one element matches."
+    },
+    {
+      "id": "pp-assemble-014",
+      "question": "Assemble all() check for positive values in nums.",
+      "tokens": ["all", "(", "x", ">", "0", "for", "x", "in", "nums", ")", "any"],
+      "validAnswers": [["all", "(", "x", ">", "0", "for", "x", "in", "nums", ")"]],
+      "explanation": "all returns True only if every element matches."
+    },
+    {
+      "id": "pp-assemble-015",
+      "question": "Assemble expression that builds list from map output.",
+      "tokens": ["list", "(", "map", "(", "str", ",", "nums", ")", ")", "tuple"],
+      "validAnswers": [["list", "(", "map", "(", "str", ",", "nums", ")", ")"]],
+      "explanation": "Wrap map with list to eagerly realize results."
+    }
+  ]
+}

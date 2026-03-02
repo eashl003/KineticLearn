@@ -1,0 +1,115 @@
+{
+  "schemaVersion": 1,
+  "name": "Python File I/O Assembly",
+  "description": "Assemble common Python file-reading and text-processing lines.",
+  "questions": [
+    {
+      "id": "file-assemble-001",
+      "question": "Assemble the code to read all text from file object f.",
+      "tokens": ["f", ".read", "(", ")", ".write", "open"],
+      "validAnswers": [["f", ".read", "(", ")"]],
+      "explanation": "f.read() reads the entire file content."
+    },
+    {
+      "id": "file-assemble-002",
+      "question": "Assemble the code to read one line from file object f.",
+      "tokens": ["f", ".readline", "(", ")", ".readlines", ".close"],
+      "validAnswers": [["f", ".readline", "(", ")"]],
+      "explanation": "f.readline() reads a single line."
+    },
+    {
+      "id": "file-assemble-003",
+      "question": "Assemble the code to read all lines from file object f.",
+      "tokens": ["f", ".readlines", "(", ")", ".read", ".split"],
+      "validAnswers": [["f", ".readlines", "(", ")"]],
+      "explanation": "f.readlines() returns a list of lines."
+    },
+    {
+      "id": "file-assemble-004",
+      "question": "Assemble the loop header to iterate through each line in file f.",
+      "tokens": ["for", "line", "in", "f", ":", "while", "if"],
+      "validAnswers": [["for", "line", "in", "f", ":"]],
+      "explanation": "for line in f: iterates over each line."
+    },
+    {
+      "id": "file-assemble-005",
+      "question": "Assemble the code to remove trailing newline and spaces from line.",
+      "tokens": ["line", ".strip", "(", ")", ".split", ".join"],
+      "validAnswers": [["line", ".strip", "(", ")"]],
+      "explanation": "line.strip() trims surrounding whitespace, including newline."
+    },
+    {
+      "id": "file-assemble-006",
+      "question": "Assemble the code to split a line into words by whitespace.",
+      "tokens": ["line", ".split", "(", ")", ".strip", ".read"],
+      "validAnswers": [["line", ".split", "(", ")"]],
+      "explanation": "line.split() creates a list of words."
+    },
+    {
+      "id": "file-assemble-007",
+      "question": "Assemble the code to join words with a single space.",
+      "tokens": ["' '", ".join", "(", "words", ")", ".split", "+"],
+      "validAnswers": [["' '", ".join", "(", "words", ")"]],
+      "explanation": "' '.join(words) combines words using spaces."
+    },
+    {
+      "id": "file-assemble-008",
+      "question": "Assemble a condition that checks if 'error' appears in line.",
+      "tokens": ["if", "'error'", "in", "line", ":", "for", "print"],
+      "validAnswers": [["if", "'error'", "in", "line", ":"]],
+      "explanation": "Use membership with in to test substring presence."
+    },
+    {
+      "id": "file-assemble-009",
+      "question": "Assemble the code to print the current line variable.",
+      "tokens": ["print", "(", "line", ")", "input", "open"],
+      "validAnswers": [["print", "(", "line", ")"]],
+      "explanation": "print(line) writes the line to standard output."
+    },
+    {
+      "id": "file-assemble-010",
+      "question": "Assemble the code to store all lines in variable lines.",
+      "tokens": ["lines", "=", "f", ".readlines", "(", ")", ".strip"],
+      "validAnswers": [["lines", "=", "f", ".readlines", "(", ")"]],
+      "explanation": "Assigning f.readlines() stores all lines in a list."
+    },
+    {
+      "id": "file-assemble-011",
+      "question": "Assemble the code to convert stripped line text into an integer.",
+      "tokens": ["int", "(", "line", ".strip", "(", ")", ")", ".split"],
+      "validAnswers": [["int", "(", "line", ".strip", "(", ")", ")"]],
+      "explanation": "int(line.strip()) parses a numeric string after trimming."
+    },
+    {
+      "id": "file-assemble-012",
+      "question": "Assemble the condition to detect an empty or whitespace-only line.",
+      "tokens": ["if", "not", "line", ".strip", "(", ")", ":", "while"],
+      "validAnswers": [["if", "not", "line", ".strip", "(", ")", ":"]],
+      "explanation": "If strip() returns '', the line is empty/whitespace."
+    },
+    {
+      "id": "file-assemble-013",
+      "question": "Assemble the statement to increment count by one.",
+      "tokens": ["count", "+=", "1", "=", "line", "print"],
+      "validAnswers": [["count", "+=", "1"]],
+      "explanation": "count += 1 increments the counter."
+    },
+    {
+      "id": "file-assemble-014",
+      "question": "Assemble the code to append a stripped line to list lines.",
+      "tokens": ["lines", ".append", "(", "line", ".strip", "(", ")", ")", ".split"],
+      "validAnswers": [["lines", ".append", "(", "line", ".strip", "(", ")", ")"]],
+      "explanation": "Append the cleaned line using lines.append(line.strip())."
+    },
+    {
+      "id": "file-assemble-015",
+      "question": "Assemble the code to initialize lines as an empty list.",
+      "tokens": ["lines", "=", "[", "]", "(", ")", "list"],
+      "validAnswers": [
+        ["lines", "=", "[", "]"],
+        ["lines", "=", "list", "(", ")"]
+      ],
+      "explanation": "Either [] or list() creates an empty list."
+    }
+  ]
+}

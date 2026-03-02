@@ -1,0 +1,14 @@
+{
+  "schemaVersion": 1,
+  "name": "Greedy",
+  "description": "Questions on greedy algorithms and when they are optimal.",
+  "language": "python",
+  "topic": "algorithms",
+  "questions": [
+    {"id": "py-greedy-001", "topic": "algorithms", "question": "A greedy algorithm makes:", "choices": ["The globally optimal choice at each step", "A locally optimal choice at each step", "Random choices", "Two choices in parallel"], "answerIndex": 1, "explanation": "Greedy picks a locally optimal choice; it is globally optimal only for certain problems."},
+    {"id": "py-greedy-002", "topic": "algorithms", "question": "Which problem is often solved greedily?", "choices": ["Longest path in a graph", "Activity selection / interval scheduling", "0/1 knapsack", "NP-complete SAT"], "answerIndex": 1, "explanation": "Activity selection (pick max non-overlapping intervals) is classic for 'earliest end time' greedy."},
+    {"id": "py-greedy-003", "topic": "algorithms", "question": "Huffman coding uses a greedy strategy based on:", "choices": ["Largest frequency first", "Smallest frequency first", "Random choice", "Alphabetical order"], "answerIndex": 1, "explanation": "Huffman repeatedly combines the two smallest frequency nodes, a greedy choice."},
+    {"id": "py-greedy-004", "topic": "algorithms", "question": "Greedy does NOT always give the correct answer for:", "choices": ["Merging sorted lists", "0/1 knapsack", "Interval scheduling", "Coin change with 1,5,10"], "answerIndex": 1, "explanation": "0/1 knapsack requires DP or backtracking; greedy by value/weight can fail."},
+    {"id": "py-greedy-005", "topic": "algorithms", "question": "To prove a greedy algorithm is correct, you often show:", "choices": ["It runs in O(n log n)", "A greedy choice is in some optimal solution", "It uses O(1) space", "It has no loops"], "answerIndex": 1, "explanation": "Proof usually shows the greedy choice is safe (contained in some optimal solution) and optimal substructure holds."}
+  ]
+}

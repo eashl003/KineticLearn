@@ -1,0 +1,14 @@
+{
+  "schemaVersion": 1,
+  "name": "Lookup Patterns",
+  "description": "Questions on dict lookups, get, and in.",
+  "language": "python",
+  "topic": "hash_maps",
+  "questions": [
+    {"id": "py-lookup-001", "topic": "hash_maps", "question": "To get a value with a default if the key is missing, use:", "choices": ["d[key]", "d.get(key, default)", "d[key] or default", "d.find(key)"], "answerIndex": 1, "explanation": "d.get(key, default) returns default when key is not in d; no KeyError."},
+    {"id": "py-lookup-002", "topic": "hash_maps", "question": "Checking if key k is in dict d is:", "choices": ["O(n)", "O(1) average", "O(log n)", "O(n log n)"], "answerIndex": 1, "explanation": "Dict membership (k in d) is O(1) average due to hashing."},
+    {"id": "py-lookup-003", "topic": "hash_maps", "question": "defaultdict(int) gives missing keys a value of:", "choices": ["None", "0", "''", "[]"], "answerIndex": 1, "explanation": "defaultdict(int) uses int() as the factory; int() is 0."},
+    {"id": "py-lookup-004", "topic": "hash_maps", "question": "d.setdefault(k, v) does what?", "choices": ["Sets d[k]=v always", "Returns d[k] if k in d, else sets d[k]=v and returns v", "Deletes k", "Raises if k missing"], "answerIndex": 1, "explanation": "setdefault returns d[k] if present; otherwise sets d[k]=v and returns v."},
+    {"id": "py-lookup-005", "topic": "hash_maps", "question": "Iterating over a dict with for k in d: iterates over:", "choices": ["Values", "Keys", "Items (key, value)", "Keys and values in order"], "answerIndex": 1, "explanation": "for k in d iterates over the keys. Use d.values() or d.items() for the others."}
+  ]
+}

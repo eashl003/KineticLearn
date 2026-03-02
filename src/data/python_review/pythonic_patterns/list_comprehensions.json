@@ -1,0 +1,14 @@
+{
+  "schemaVersion": 1,
+  "name": "List Comprehensions",
+  "description": "Questions on list comprehensions and readability.",
+  "language": "python",
+  "topic": "pythonic_patterns",
+  "questions": [
+    {"id": "py-lc-001", "topic": "pythonic_patterns", "question": "[x for x in range(5)] produces:", "choices": ["[0,1,2,3,4]", "range(5)", "(0,1,2,3,4)", "[[0],[1],[2],[3],[4]]"], "answerIndex": 0, "explanation": "List comprehension builds a list of each x in range(5)."},
+    {"id": "py-lc-002", "topic": "pythonic_patterns", "question": "Which creates a generator (not a list)?", "choices": ["[x for x in range(10)]", "(x for x in range(10))", "{x for x in range(10)}", "list(range(10))"], "answerIndex": 1, "explanation": "Parentheses create a generator expression; brackets create a list."},
+    {"id": "py-lc-003", "topic": "pythonic_patterns", "question": "[x*2 for x in range(3)] is:", "choices": ["[0, 2, 4]", "[2, 4, 6]", "[0, 1, 2]", "Error"], "answerIndex": 0, "explanation": "x takes 0, 1, 2; x*2 gives 0, 2, 4."},
+    {"id": "py-lc-004", "topic": "pythonic_patterns", "question": "You can add a filter with:", "choices": ["if at the start", "if at the end of the for clause", "where keyword", "filter only as function"], "answerIndex": 1, "explanation": "Syntax is [x for x in iterable if condition] — if comes after the for clause."},
+    {"id": "py-lc-005", "topic": "pythonic_patterns", "question": "[[1,2],[3,4]] flattened with a comprehension:", "choices": ["[x for x in lst]", "[x for row in lst for x in row]", "[for x in row for row in lst]", "flatten(lst)"], "answerIndex": 1, "explanation": "Nested loops in a comprehension: for row in lst, then for x in row, collect x."}
+  ]
+}

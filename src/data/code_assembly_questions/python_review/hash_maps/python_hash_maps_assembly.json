@@ -1,0 +1,112 @@
+{
+  "schemaVersion": 1,
+  "name": "Python Hash Maps Assembly",
+  "description": "Assemble dictionary and frequency-counting code patterns.",
+  "questions": [
+    {
+      "id": "hm-assemble-001",
+      "question": "Assemble code to initialize an empty frequency dictionary.",
+      "tokens": ["freq", "=", "{", "}", "dict", "(", ")"],
+      "validAnswers": [["freq", "=", "{", "}"], ["freq", "=", "dict", "(", ")"]],
+      "explanation": "Use {} or dict() to create a dictionary."
+    },
+    {
+      "id": "hm-assemble-002",
+      "question": "Assemble code to increment frequency of key ch with default 0.",
+      "tokens": ["freq", "[", "ch", "]", "=", "freq", ".get", "(", "ch", ",", "0", ")", "+", "1"],
+      "validAnswers": [["freq", "[", "ch", "]", "=", "freq", ".get", "(", "ch", ",", "0", ")", "+", "1"]],
+      "explanation": "get with default allows safe increment."
+    },
+    {
+      "id": "hm-assemble-003",
+      "question": "Assemble code to initialize count for key word to 0 only if missing.",
+      "tokens": ["freq", ".setdefault", "(", "word", ",", "0", ")", ".get", "(", ")"],
+      "validAnswers": [["freq", ".setdefault", "(", "word", ",", "0", ")"]],
+      "explanation": "setdefault inserts default only when key absent."
+    },
+    {
+      "id": "hm-assemble-004",
+      "question": "Assemble loop over dictionary key-value pairs in counts.",
+      "tokens": ["for", "k", ",", "v", "in", "counts", ".items", "(", ")", ":"],
+      "validAnswers": [["for", "k", ",", "v", "in", "counts", ".items", "(", ")", ":"]],
+      "explanation": "items() yields key and value together."
+    },
+    {
+      "id": "hm-assemble-005",
+      "question": "Assemble condition to check if key target is present in map m.",
+      "tokens": ["if", "target", "in", "m", ":", "not", ".has"],
+      "validAnswers": [["if", "target", "in", "m", ":"]],
+      "explanation": "Use in for key membership in dict."
+    },
+    {
+      "id": "hm-assemble-006",
+      "question": "Assemble code to fetch key k from dict m with default -1.",
+      "tokens": ["m", ".get", "(", "k", ",", "-1", ")", "[", "]"],
+      "validAnswers": [["m", ".get", "(", "k", ",", "-1", ")"]],
+      "explanation": "get returns provided fallback when key missing."
+    },
+    {
+      "id": "hm-assemble-007",
+      "question": "Assemble code to delete key k from dict m only if it exists.",
+      "tokens": ["if", "k", "in", "m", ":", "del", "m", "[", "k", "]"],
+      "validAnswers": [["if", "k", "in", "m", ":", "del", "m", "[", "k", "]"]],
+      "explanation": "Guarded delete avoids KeyError."
+    },
+    {
+      "id": "hm-assemble-008",
+      "question": "Assemble code to iterate keys of dict d.",
+      "tokens": ["for", "key", "in", "d", ":", ".keys", "(", ")"],
+      "validAnswers": [["for", "key", "in", "d", ":"], ["for", "key", "in", "d", ".keys", "(", ")", ":"]],
+      "explanation": "Iterating dict directly yields keys."
+    },
+    {
+      "id": "hm-assemble-009",
+      "question": "Assemble code to merge d2 into d1 in place.",
+      "tokens": ["d1", ".update", "(", "d2", ")", "|=", "|"],
+      "validAnswers": [["d1", ".update", "(", "d2", ")"], ["d1", "|=", "d2"]],
+      "explanation": "Both update() and |= modify dict in place."
+    },
+    {
+      "id": "hm-assemble-010",
+      "question": "Assemble code to create inverse map from pairs list.",
+      "tokens": ["inv", "=", "{", "v", ":", "k", "for", "k", ",", "v", "in", "pairs", "}"],
+      "validAnswers": [["inv", "=", "{", "v", ":", "k", "for", "k", ",", "v", "in", "pairs", "}"]],
+      "explanation": "Dict comprehension can invert key-value pairs."
+    },
+    {
+      "id": "hm-assemble-011",
+      "question": "Assemble code to initialize adjacency list entry for node n if absent.",
+      "tokens": ["graph", ".setdefault", "(", "n", ",", "[", "]", ")", ".append"],
+      "validAnswers": [["graph", ".setdefault", "(", "n", ",", "[", "]", ")"]],
+      "explanation": "setdefault helps build adjacency lists."
+    },
+    {
+      "id": "hm-assemble-012",
+      "question": "Assemble code to append neighbor b to graph[a].",
+      "tokens": ["graph", "[", "a", "]", ".append", "(", "b", ")", ".add"],
+      "validAnswers": [["graph", "[", "a", "]", ".append", "(", "b", ")"]],
+      "explanation": "Append neighbor to the adjacency list."
+    },
+    {
+      "id": "hm-assemble-013",
+      "question": "Assemble code to count words in text list words using Counter.",
+      "tokens": ["from", "collections", "import", "Counter", "counter", "=", "Counter", "(", "words", ")"],
+      "validAnswers": [["counter", "=", "Counter", "(", "words", ")"]],
+      "explanation": "Counter(words) builds frequency counts quickly."
+    },
+    {
+      "id": "hm-assemble-014",
+      "question": "Assemble code to check anagram equality by frequency maps a and b.",
+      "tokens": ["if", "a", "==", "b", ":", "!=", "return"],
+      "validAnswers": [["if", "a", "==", "b", ":"]],
+      "explanation": "Frequency maps equal means same counts."
+    },
+    {
+      "id": "hm-assemble-015",
+      "question": "Assemble code to return first index of target from map idx with default -1.",
+      "tokens": ["return", "idx", ".get", "(", "target", ",", "-1", ")", "[", "]"],
+      "validAnswers": [["return", "idx", ".get", "(", "target", ",", "-1", ")"]],
+      "explanation": "Use get for safe map lookup."
+    }
+  ]
+}

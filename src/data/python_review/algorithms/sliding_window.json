@@ -1,0 +1,14 @@
+{
+  "schemaVersion": 1,
+  "name": "Sliding Window",
+  "description": "Questions on fixed and variable sliding window patterns.",
+  "language": "python",
+  "topic": "algorithms",
+  "questions": [
+    {"id": "py-sw-001", "topic": "algorithms", "question": "A sliding window is used to:", "choices": ["Sort a list", "Compute something over a contiguous subsequence", "Binary search", "Build a heap"], "answerIndex": 1, "explanation": "Sliding window maintains a contiguous segment and updates it as the window moves."},
+    {"id": "py-sw-002", "topic": "algorithms", "question": "For 'max sum of k consecutive elements', the window size is:", "choices": ["Variable", "Fixed at k", "Always 1", "n"], "answerIndex": 1, "explanation": "Max sum of k consecutive elements uses a fixed window of size k."},
+    {"id": "py-sw-003", "topic": "algorithms", "question": "For 'longest substring with at most k distinct characters', the window size is:", "choices": ["Fixed", "Variable", "Always 0", "k"], "answerIndex": 1, "explanation": "You expand/shrink the window to satisfy the constraint, so the window size varies."},
+    {"id": "py-sw-004", "topic": "algorithms", "question": "Sliding window often achieves what time complexity for a single pass?", "choices": ["O(n^2)", "O(n)", "O(log n)", "O(n log n)"], "answerIndex": 1, "explanation": "Each element is added and removed from the window at most once, so O(n)."},
+    {"id": "py-sw-005", "topic": "algorithms", "question": "Which structure is commonly used to track distinct elements in a window?", "choices": ["Stack", "dict or Counter", "Heap", "Queue only"], "answerIndex": 1, "explanation": "A dict or Counter tracks frequencies or distinct counts as the window moves."}
+  ]
+}

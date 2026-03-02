@@ -1,0 +1,14 @@
+{
+  "schemaVersion": 1,
+  "name": "Recursion",
+  "description": "Questions on recursion, base cases, and call stacks.",
+  "language": "python",
+  "topic": "algorithms",
+  "questions": [
+    {"id": "py-rec-001", "topic": "algorithms", "question": "A recursive function must have:", "choices": ["At least two arguments", "A base case", "A loop", "A decorator"], "answerIndex": 1, "explanation": "A base case stops the recursion; without it you get infinite recursion and stack overflow."},
+    {"id": "py-rec-002", "topic": "algorithms", "question": "What is the maximum recursion depth in Python (typical default)?", "choices": ["100", "500", "1000", "Unlimited"], "answerIndex": 2, "explanation": "sys.getrecursionlimit() is typically 1000; you can change it with setrecursionlimit()."},
+    {"id": "py-rec-003", "topic": "algorithms", "question": "Recursive factorial: def f(n): return 1 if n <= 1 else n * f(n-1). What is f(0)?", "choices": ["0", "1", "RecursionError", "None"], "answerIndex": 1, "explanation": "Base case n <= 1 returns 1, so f(0) and f(1) both return 1."},
+    {"id": "py-rec-004", "topic": "algorithms", "question": "Tail recursion in Python is:", "choices": ["Faster than iteration", "Optimized by the interpreter", "Not optimized; stack grows", "Only in PyPy"], "answerIndex": 2, "explanation": "Python does not optimize tail recursion; each call uses stack space."},
+    {"id": "py-rec-005", "topic": "algorithms", "question": "Which problem is naturally recursive?", "choices": ["Iterating a list once", "Computing Fibonacci F(n) from F(n-1) and F(n-2)", "Summing numbers in a loop", "Looking up in a dict"], "answerIndex": 1, "explanation": "Fibonacci is defined recursively; tree traversal and divide-and-conquer are other natural fits."}
+  ]
+}

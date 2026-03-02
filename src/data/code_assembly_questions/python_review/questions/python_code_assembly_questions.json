@@ -1,0 +1,148 @@
+{
+  "schemaVersion": 1,
+  "name": "Python Code Assembly",
+  "description": "Assemble correct lines of Python code from token fragments using hand gestures.",
+  "questions": [
+    {
+      "id": "py-assemble-001",
+      "question": "Assemble the correct line of code to remove the key 'cat' from dictionary pets.",
+      "tokens": ["del", "pets", "[", "]", "'cat'", ".pop", "(", ")"],
+      "validAnswers": [
+        ["del", "pets", "[", "'cat'", "]"],
+        ["pets", ".pop", "(", "'cat'", ")"]
+      ],
+      "explanation": "You can remove a key from a dictionary using del pets['cat'] or pets.pop('cat')."
+    },
+    {
+      "id": "py-assemble-002",
+      "question": "Assemble the code to create an empty list called fruits.",
+      "tokens": ["fruits", "=", "[", "]", "(", ")", "list"],
+      "validAnswers": [
+        ["fruits", "=", "[", "]"],
+        ["fruits", "=", "list", "(", ")"]
+      ],
+      "explanation": "An empty list can be created with fruits = [] or fruits = list()."
+    },
+    {
+      "id": "py-assemble-003",
+      "question": "Assemble the code to append 'apple' to the list fruits.",
+      "tokens": ["fruits", ".append", "(", ")", "'apple'", ".add", "[", "]"],
+      "validAnswers": [
+        ["fruits", ".append", "(", "'apple'", ")"]
+      ],
+      "explanation": "Use .append() to add a single element to the end of a list. .add() is for sets, not lists."
+    },
+    {
+      "id": "py-assemble-004",
+      "question": "Assemble a for loop that iterates over the keys of dictionary d.",
+      "tokens": ["for", "key", "in", "d", ":", ".keys", "(", ")", ".items"],
+      "validAnswers": [
+        ["for", "key", "in", "d", ":"],
+        ["for", "key", "in", "d", ".keys", "(", ")", ":"]
+      ],
+      "explanation": "Iterating 'for key in d:' yields keys by default. You can also use d.keys() explicitly."
+    },
+    {
+      "id": "py-assemble-005",
+      "question": "Assemble the code to get the length of list items.",
+      "tokens": ["len", "(", ")", "items", ".length", ".size"],
+      "validAnswers": [
+        ["len", "(", "items", ")"]
+      ],
+      "explanation": "Python uses the built-in len() function. There is no .length or .size attribute on lists."
+    },
+    {
+      "id": "py-assemble-006",
+      "question": "Assemble a list comprehension that squares each number x in range(5).",
+      "tokens": ["[", "]", "x", "**", "2", "for", "x", "in", "range", "(", "5", ")"],
+      "validAnswers": [
+        ["[", "x", "**", "2", "for", "x", "in", "range", "(", "5", ")", "]"]
+      ],
+      "explanation": "[x ** 2 for x in range(5)] produces [0, 1, 4, 9, 16]."
+    },
+    {
+      "id": "py-assemble-007",
+      "question": "Assemble the code to define a function called greet that takes a name parameter.",
+      "tokens": ["def", "greet", "(", ")", "name", ":", "func", "->"],
+      "validAnswers": [
+        ["def", "greet", "(", "name", ")", ":"]
+      ],
+      "explanation": "Function definition syntax: def function_name(parameter):."
+    },
+    {
+      "id": "py-assemble-008",
+      "question": "Assemble the code to check if 'x' is a key in dictionary d.",
+      "tokens": ["'x'", "in", "d", "if", ":", "not", ".has"],
+      "validAnswers": [
+        ["if", "'x'", "in", "d", ":"],
+        ["'x'", "in", "d"]
+      ],
+      "explanation": "'x' in d checks key membership. Python dicts don't have a .has() method."
+    },
+    {
+      "id": "py-assemble-009",
+      "question": "Assemble the code to slice the first three elements from list nums.",
+      "tokens": ["nums", "[", "]", ":", "3", "0", ".slice"],
+      "validAnswers": [
+        ["nums", "[", ":", "3", "]"],
+        ["nums", "[", "0", ":", "3", "]"]
+      ],
+      "explanation": "nums[:3] or nums[0:3] returns the first three elements. Python uses bracket slicing, not .slice()."
+    },
+    {
+      "id": "py-assemble-010",
+      "question": "Assemble a try-except block that catches a ValueError.",
+      "tokens": ["try", ":", "except", "ValueError", "catch", "Error", "pass"],
+      "validAnswers": [
+        ["try", ":", "except", "ValueError", ":"]
+      ],
+      "explanation": "Python uses try/except (not try/catch). The syntax is: try: ... except ValueError:."
+    },
+    {
+      "id": "py-assemble-011",
+      "question": "Assemble the code to import the math module.",
+      "tokens": ["import", "math", "from", "require", "*"],
+      "validAnswers": [
+        ["import", "math"]
+      ],
+      "explanation": "Use 'import math' to import the entire math module."
+    },
+    {
+      "id": "py-assemble-012",
+      "question": "Assemble the code to join a list of words with spaces.",
+      "tokens": ["' '", ".join", "(", ")", "words", "+", ".concat"],
+      "validAnswers": [
+        ["' '", ".join", "(", "words", ")"]
+      ],
+      "explanation": "' '.join(words) joins list elements with a space separator. Python strings have a .join() method."
+    },
+    {
+      "id": "py-assemble-013",
+      "question": "Assemble the code to open a file called 'data.txt' for reading using a context manager.",
+      "tokens": ["with", "open", "(", ")", "'data.txt'", ",", "'r'", "as", "f", ":"],
+      "validAnswers": [
+        ["with", "open", "(", "'data.txt'", ",", "'r'", ")", "as", "f", ":"],
+        ["with", "open", "(", "'data.txt'", ")", "as", "f", ":"]
+      ],
+      "explanation": "The with statement ensures the file is properly closed. 'r' is the default mode so it can be omitted."
+    },
+    {
+      "id": "py-assemble-014",
+      "question": "Assemble the code to reverse the list nums in place.",
+      "tokens": ["nums", ".reverse", "(", ")", "reversed", ".sort"],
+      "validAnswers": [
+        ["nums", ".reverse", "(", ")"]
+      ],
+      "explanation": "list.reverse() reverses the list in place and returns None. reversed() returns an iterator instead."
+    },
+    {
+      "id": "py-assemble-015",
+      "question": "Assemble the code to create a set from the list items.",
+      "tokens": ["set", "(", ")", "items", "{", "}", "frozenset"],
+      "validAnswers": [
+        ["set", "(", "items", ")"]
+      ],
+      "explanation": "set(items) creates a set from an iterable, removing duplicates."
+    }
+  ]
+}

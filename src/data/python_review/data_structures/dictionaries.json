@@ -1,0 +1,233 @@
+{
+  "schemaVersion": 1,
+  "name": "Python Dictionaries",
+  "description": "Questions on dicts: access, changing, adding, removing, looping, copy, nested dictionaries, and more.",
+  "language": "python",
+  "topic": "data_structures",
+  "questions": [
+    {
+      "id": "py-dict-001",
+      "topic": "data_structures",
+      "question": "You need O(1) average lookup by key. Which data structure?",
+      "choices": ["list", "tuple", "dict", "set"],
+      "answerIndex": 2,
+      "explanation": "A dict provides average O(1) key lookup via hashing."
+    },
+    {
+      "id": "py-dict-002",
+      "topic": "data_structures",
+      "question": "What does d.get('x', 0) return if 'x' is not in d?",
+      "choices": ["None", "KeyError", "0", "''"],
+      "answerIndex": 2,
+      "explanation": "get(key, default) returns default when key is missing; here default is 0."
+    },
+    {
+      "id": "py-dict-003",
+      "topic": "data_structures",
+      "question": "Which dict method returns and removes a key-value pair?",
+      "choices": ["remove()", "pop()", "delete()", "discard()"],
+      "answerIndex": 1,
+      "explanation": "dict.pop(key) returns the value and removes the key. remove/delete/discard are for other types."
+    },
+    {
+      "id": "py-dict-004",
+      "topic": "data_structures",
+      "question": "Can a dict key be a list?",
+      "choices": ["Yes", "No, keys must be hashable", "Only if the list is empty", "Only in Python 3.9+"],
+      "answerIndex": 1,
+      "explanation": "Dict keys must be hashable (immutable). Lists are mutable and unhashable."
+    },
+    {
+      "id": "py-dict-005",
+      "topic": "data_structures",
+      "question": "What is dict.fromkeys(['a','b'], 0)?",
+      "choices": ["{'a':0,'b':0}", "{'a':'b', 0:0}", "[]", "Syntax error"],
+      "answerIndex": 0,
+      "explanation": "fromkeys(iterable, value) creates a dict with keys from iterable and the same value for each."
+    },
+    {
+      "id": "py-dict-006",
+      "topic": "data_structures",
+      "question": "What best describes a Python dict?",
+      "choices": ["Ordered list of pairs", "Mapping from hashable keys to values", "Set of key-value tuples", "Immutable lookup table"],
+      "answerIndex": 1,
+      "explanation": "A dict is a mapping from keys to values. Keys must be hashable; values can be any type. In Python 3.7+ insertion order is preserved."
+    },
+    {
+      "id": "py-dict-007",
+      "topic": "data_structures",
+      "question": "What happens when you do d[key] and key is not in d?",
+      "choices": ["Returns None", "Returns 0", "KeyError", "Adds key with value None"],
+      "answerIndex": 2,
+      "explanation": "Subscription d[key] raises KeyError if the key is missing. Use d.get(key, default) to avoid the error."
+    },
+    {
+      "id": "py-dict-008",
+      "topic": "data_structures",
+      "question": "What does d.get(key) return when key is not in d?",
+      "choices": ["KeyError", "0", "None", "''"],
+      "answerIndex": 2,
+      "explanation": "get(key) with one argument returns None when the key is missing. Use get(key, default) to supply a default value."
+    },
+    {
+      "id": "py-dict-009",
+      "topic": "data_structures",
+      "question": "How do you get all keys from a dict d?",
+      "choices": ["d.keys()", "d.all_keys()", "keys(d)", "d.key_list()"],
+      "answerIndex": 0,
+      "explanation": "d.keys() returns a view of the keys. You can iterate or convert to list: list(d.keys()). In a loop, for k in d also iterates keys."
+    },
+    {
+      "id": "py-dict-010",
+      "topic": "data_structures",
+      "question": "How do you change or add a key-value pair in a dict?",
+      "choices": ["d.set(key, value)", "d[key] = value", "d.update_key(key, value)", "d.insert(key, value)"],
+      "answerIndex": 1,
+      "explanation": "Assignment d[key] = value sets or updates the value for that key. If the key exists, it is updated; if not, the pair is added."
+    },
+    {
+      "id": "py-dict-011",
+      "topic": "data_structures",
+      "question": "What does dict1.update(dict2) do?",
+      "choices": ["Replaces dict1 with dict2", "Adds or updates keys from dict2 into dict1", "Returns a new dict with both", "Raises error if keys overlap"],
+      "answerIndex": 1,
+      "explanation": "Adds or updates keys from dict2 into dict1: dict1.update(dict2) copies all key-value pairs from dict2 into dict1, adding new keys and overwriting any existing keys in dict1 that also appear in dict2. It modifies dict1 in place and returns None."
+    },
+    {
+      "id": "py-dict-012",
+      "topic": "data_structures",
+      "question": "What happens if you do del d[key] when key is not in d?",
+      "choices": ["Nothing", "KeyError", "ValueError", "d becomes {}"],
+      "answerIndex": 1,
+      "explanation": "del d[key] removes the key. If the key is missing, it raises KeyError. Use d.pop(key, default) to avoid the error."
+    },
+    {
+      "id": "py-dict-013",
+      "topic": "data_structures",
+      "question": "What does d.popitem() do?",
+      "choices": ["Removes the first item", "Removes and returns an arbitrary (key, value) pair", "Removes the last item", "Returns all items"],
+      "answerIndex": 1,
+      "explanation": "popitem() removes and returns an arbitrary (key, value) pair. In Python 3.7+, dicts preserve order, so it removes the last inserted pair. KeyError if empty."
+    },
+    {
+      "id": "py-dict-014",
+      "topic": "data_structures",
+      "question": "What does d.clear() do?",
+      "choices": ["Returns a copy", "Removes all key-value pairs from d", "Removes the first pair", "Sets all values to None"],
+      "answerIndex": 1,
+      "explanation": "clear() removes every key-value pair from the dict, leaving it empty. Returns None, modifies in place."
+    },
+    {
+      "id": "py-dict-015",
+      "topic": "data_structures",
+      "question": "In for k in d:, what does k represent?",
+      "choices": ["Values", "Keys", "(key, value) tuples", "Indices"],
+      "answerIndex": 1,
+      "explanation": "Iterating over a dict (for k in d) yields its keys. Use d.values() for values or d.items() for (key, value) pairs."
+    },
+    {
+      "id": "py-dict-016",
+      "topic": "data_structures",
+      "question": "How do you loop over both keys and values of a dict?",
+      "choices": ["for k, v in d:", "for k, v in d.items():", "for k, v in d.keys_values():", "for (k, v) in d.pairs():"],
+      "answerIndex": 1,
+      "explanation": "d.items() yields (key, value) pairs. So for k, v in d.items(): gives you each key and its value."
+    },
+    {
+      "id": "py-dict-017",
+      "topic": "data_structures",
+      "question": "What does d.copy() create?",
+      "choices": ["A reference to the same dict", "A shallow copy", "A deep copy", "An empty dict"],
+      "answerIndex": 1,
+      "explanation": "copy() returns a shallow copy: a new dict with the same keys and values. If values are mutable (e.g. nested dicts), those objects are shared."
+    },
+    {
+      "id": "py-dict-018",
+      "topic": "data_structures",
+      "question": "If d = {'a': {'b': 1}}, does d.copy() copy the inner dict?",
+      "choices": ["Yes", "No; the inner dict is shared", "copy() raises an error", "Only in Python 3.9+"],
+      "answerIndex": 1,
+      "explanation": "Shallow copy only copies the top level. d['a'] and the copy's ['a'] refer to the same nested dict. Use copy.deepcopy(d) for full independence."
+    },
+    {
+      "id": "py-dict-019",
+      "topic": "data_structures",
+      "question": "For d = {'a': {'b': 1}}, how do you access the value 1?",
+      "choices": ["d['a', 'b']", "d['a']['b']", "d['a'].get('b')", "d.get('a').get('b')"],
+      "answerIndex": 1,
+      "explanation": "Chain subscripting: d['a'] gives the inner dict, then ['b'] gives 1. So d['a']['b'] is 1."
+    },
+    {
+      "id": "py-dict-020",
+      "topic": "data_structures",
+      "question": "You have a shallow copy c of a dict d with nested dicts. You do c['a']['x'] = 99. What happens to d?",
+      "choices": ["d is unchanged", "d['a']['x'] becomes 99", "KeyError", "d is cleared"],
+      "answerIndex": 1,
+      "explanation": "c['a'] and d['a'] refer to the same nested dict. So changing c['a']['x'] mutates that shared object; d['a']['x'] is 99 too."
+    },
+    {
+      "id": "py-dict-021",
+      "topic": "data_structures",
+      "question": "What does 'x' in d check?",
+      "choices": ["Whether 'x' is a value in d", "Whether 'x' is a key in d", "Whether d has exactly one key", "Whether 'x' is in d.keys() and d.values()"],
+      "answerIndex": 1,
+      "explanation": "key in d checks membership among keys (same as key in d.keys()). It does not search values. Use value in d.values() to check values."
+    },
+    {
+      "id": "py-dict-022",
+      "topic": "data_structures",
+      "question": "How do you create an empty dict?",
+      "choices": ["dict()", "{}", "Both dict() and {}", "empty_dict()"],
+      "answerIndex": 2,
+      "explanation": "Both dict() and {} create an empty dict. {} is literal and common; dict() is useful when building from arguments or copying."
+    },
+    {
+      "id": "py-dict-023",
+      "topic": "data_structures",
+      "question": "What does {x: x**2 for x in range(3)} produce?",
+      "choices": ["[0, 1, 4]", "{0: 0, 1: 1, 2: 4}", "Syntax error", "{(0,0), (1,1), (2,4)}"],
+      "answerIndex": 1,
+      "explanation": "Dict comprehension: {key_expr: value_expr for ...}. So {x: x**2 for x in range(3)} is {0: 0, 1: 1, 2: 4}."
+    },
+    {
+      "id": "py-dict-024",
+      "topic": "data_structures",
+      "question": "d.setdefault(key, default) does what?",
+      "choices": ["Sets d[key] to default and returns default", "Returns d[key] if key exists, else default (does not set)", "If key not in d, sets d[key] = default and returns default; else returns d[key]", "Same as d[key] = default"],
+      "answerIndex": 2,
+      "explanation": "setdefault(key, default): if key is in d, returns d[key]. If not, sets d[key] = default and returns default. Useful for initializing nested structures."
+    },
+    {
+      "id": "py-dict-025",
+      "topic": "data_structures",
+      "question": "What type do d.keys(), d.values(), and d.items() return (in Python 3)?",
+      "choices": ["Lists", "Tuples", "View objects (dict view)", "Generators"],
+      "answerIndex": 2,
+      "explanation": "In Python 3 they return view objects that reflect the current dict. They are iterable and support membership tests. Changes to d are visible in the view."
+    },
+    {
+      "id": "py-dict-026",
+      "topic": "data_structures",
+      "question": "Given dict1 = {'a': 1, 'b': 2} and dict2 = {'b': 99, 'c': 3}, after running dict1.update(dict2), what is the value of 'b' in dict1?",
+      "choices": ["2", "99", "3", "KeyError"],
+      "answerIndex": 1,
+      "explanation": "dict.update() overwrites existing keys in dict1 with values from dict2, so 'b' becomes 99."
+    },
+    {
+      "id": "py-dict-027",
+      "topic": "data_structures",
+      "question": "What is the difference between list.pop() and dict.popitem()?",
+      "choices": ["Both remove the last element by index", "list.pop() removes a specified key, while dict.popitem() removes a value", "Unlike lists, dictionaries do not support pop() without arguments; popitem() is used to remove and return the most recently inserted key-value pair.", "dict.popitem() removes a random element, while list.pop() removes the first element"],
+      "answerIndex": 2,
+      "explanation": "Unlike lists, dictionaries do not support pop() without arguments; popitem() is used to remove and return the most recently inserted key-value pair."
+    },
+    {
+      "id": "py-dict-028",
+      "topic": "data_structures",
+      "question": "In Python 3.9+, what does d1 | d2 return when both are dicts?",
+      "choices": ["A set of shared keys", "A new dict merging d1 and d2, with d2's values taking priority on overlap", "A list of (key, value) tuples from both dicts", "A KeyError if any keys overlap"],
+      "answerIndex": 1,
+      "explanation": "The | operator (Python 3.9+) returns a new dict containing all keys from both. If a key exists in both, d2's value wins. Use |= to merge in place."
+    }
+  ]
+}

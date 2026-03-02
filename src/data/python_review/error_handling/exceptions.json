@@ -1,0 +1,14 @@
+{
+  "schemaVersion": 1,
+  "name": "Exceptions",
+  "description": "Questions on try/except and exception handling.",
+  "language": "python",
+  "topic": "error_handling",
+  "questions": [
+    {"id": "py-ex-001", "topic": "error_handling", "question": "After an exception is raised and caught, execution:", "choices": ["Exits the program", "Continues after the except block", "Restarts the try", "Returns None"], "answerIndex": 1, "explanation": "After handling the exception, execution continues with the code after the try/except."},
+    {"id": "py-ex-002", "topic": "error_handling", "question": "except Exception as e: catches:", "choices": ["Only TypeError", "All exceptions (except BaseException subclasses like SystemExit)", "Only runtime errors", "Nothing"], "answerIndex": 1, "explanation": "Exception is the base for most built-in exceptions; catching it catches most errors."},
+    {"id": "py-ex-003", "topic": "error_handling", "question": "raise ValueError('bad') does what?", "choices": ["Prints 'bad'", "Creates and raises a ValueError with message 'bad'", "Returns 'bad'", "Ignores the error"], "answerIndex": 1, "explanation": "raise creates an exception instance and raises it; the string is the exception message."},
+    {"id": "py-ex-004", "topic": "error_handling", "question": "try: ... finally: ... ensures:", "choices": ["The try never raises", "The finally block runs (even after return or exception)", "Only else runs", "except is required"], "answerIndex": 1, "explanation": "finally runs whether the try raises or not, and even after return in try."},
+    {"id": "py-ex-005", "topic": "error_handling", "question": "Catching BaseException is generally:", "choices": ["Recommended", "Avoided; it catches SystemExit and KeyboardInterrupt", "Required for async", "Faster"], "answerIndex": 1, "explanation": "BaseException includes SystemExit and KeyboardInterrupt; catching it can prevent normal exit."}
+  ]
+}

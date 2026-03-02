@@ -1,0 +1,85 @@
+{
+  "schemaVersion": 1,
+  "questions": [
+    {
+      "id": "py-dict-001",
+      "topic": "python-basics",
+      "question": "You need O(1) average lookup by key. Which data structure?",
+      "choices": ["list", "tuple", "dict", "set"],
+      "answerIndex": 2,
+      "explanation": "A dict provides average O(1) key lookup via hashing."
+    },
+    {
+      "id": "py-list-002",
+      "topic": "python-basics",
+      "question": "What is the time complexity of appending to a Python list?",
+      "choices": ["O(n)", "O(log n)", "O(1) amortized", "O(n log n)"],
+      "answerIndex": 2,
+      "explanation": "Python lists use dynamic arrays. Append is O(1) amortized because the array doubles in size when full."
+    },
+    {
+      "id": "py-set-003",
+      "topic": "python-basics",
+      "question": "Which operation is NOT O(1) average for a Python set?",
+      "choices": ["add", "remove", "sorted iteration", "membership test"],
+      "answerIndex": 2,
+      "explanation": "Sorted iteration requires O(n log n) because sets are unordered. You must sort first."
+    },
+    {
+      "id": "py-slice-004",
+      "topic": "python-basics",
+      "question": "What does my_list[::-1] return?",
+      "choices": ["Empty list", "First element", "Reversed copy", "Last element"],
+      "answerIndex": 2,
+      "explanation": "The slice [::-1] creates a reversed shallow copy of the list by stepping backwards."
+    },
+    {
+      "id": "py-gc-005",
+      "topic": "python-internals",
+      "question": "Python's primary garbage collection mechanism is:",
+      "choices": ["Mark and sweep", "Reference counting", "Generational only", "Manual deallocation"],
+      "answerIndex": 1,
+      "explanation": "Python primarily uses reference counting, supplemented by a cyclic garbage collector for reference cycles."
+    },
+    {
+      "id": "py-gen-006",
+      "topic": "python-advanced",
+      "question": "What keyword makes a function return a generator?",
+      "choices": ["return", "yield", "async", "generate"],
+      "answerIndex": 1,
+      "explanation": "The yield keyword turns a function into a generator function that produces values lazily."
+    },
+    {
+      "id": "py-deco-007",
+      "topic": "python-advanced",
+      "question": "A decorator in Python is essentially a function that:",
+      "choices": ["Modifies a class attribute", "Takes a function and returns a function", "Creates a new module", "Handles exceptions"],
+      "answerIndex": 1,
+      "explanation": "A decorator takes a function as input and returns a new function, often adding behavior before/after the original."
+    },
+    {
+      "id": "py-comp-008",
+      "topic": "python-basics",
+      "question": "Which creates a generator expression (not a list)?",
+      "choices": ["[x for x in range(10)]", "(x for x in range(10))", "{x for x in range(10)}", "list(range(10))"],
+      "answerIndex": 1,
+      "explanation": "Parentheses around a comprehension create a generator expression, which is lazy and memory-efficient."
+    },
+    {
+      "id": "py-mut-009",
+      "topic": "python-basics",
+      "question": "Which of these Python types is mutable?",
+      "choices": ["str", "tuple", "frozenset", "dict"],
+      "answerIndex": 3,
+      "explanation": "Dicts are mutable — you can add, remove, and update key-value pairs. str, tuple, and frozenset are immutable."
+    },
+    {
+      "id": "py-sort-010",
+      "topic": "algorithms",
+      "question": "Python's built-in sort uses which algorithm?",
+      "choices": ["Quicksort", "Mergesort", "Timsort", "Heapsort"],
+      "answerIndex": 2,
+      "explanation": "Python uses Timsort, a hybrid algorithm derived from merge sort and insertion sort, with O(n log n) worst case."
+    }
+  ]
+}

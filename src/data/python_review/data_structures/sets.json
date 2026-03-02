@@ -1,0 +1,209 @@
+{
+  "schemaVersion": 1,
+  "name": "Python Sets",
+  "description": "Questions on sets: definition, access, add, remove, loop, join, frozenset, and set methods.",
+  "language": "python",
+  "topic": "data_structures",
+  "questions": [
+    {
+      "id": "py-set-001",
+      "topic": "data_structures",
+      "question": "Which operation is NOT O(1) average for a Python set?",
+      "choices": ["add", "remove", "sorted iteration", "membership test"],
+      "answerIndex": 2,
+      "explanation": "Sorted iteration requires O(n log n) because sets are unordered. You must sort first."
+    },
+    {
+      "id": "py-set-002",
+      "topic": "data_structures",
+      "question": "What does {1, 2, 2, 3} evaluate to?",
+      "choices": ["{1, 2, 2, 3}", "{1, 2, 3}", "Syntax error", "{1, 3}"],
+      "answerIndex": 1,
+      "explanation": "Sets contain unique elements; duplicates are automatically removed."
+    },
+    {
+      "id": "py-set-003",
+      "topic": "data_structures",
+      "question": "Which set operation returns elements in either set?",
+      "choices": ["intersection", "union", "difference", "symmetric_difference"],
+      "answerIndex": 1,
+      "explanation": "Union (| or union()) returns all elements from both sets."
+    },
+    {
+      "id": "py-set-004",
+      "topic": "data_structures",
+      "question": "Can a set contain a tuple?",
+      "choices": ["No", "Yes, if the tuple contains only hashable items", "Only tuples of length 1", "Only in Python 3.7+"],
+      "answerIndex": 1,
+      "explanation": "Sets require hashable elements. Tuples are hashable if all their elements are hashable."
+    },
+    {
+      "id": "py-set-005",
+      "topic": "data_structures",
+      "question": "What is the result of set()?",
+      "choices": ["{}", "set()", "None", "Syntax error"],
+      "answerIndex": 1,
+      "explanation": "set() is the empty set. {} is an empty dict, not a set."
+    },
+    {
+      "id": "py-set-006",
+      "topic": "data_structures",
+      "question": "What best describes a Python set?",
+      "choices": ["Ordered collection of unique elements", "Unordered collection of unique, hashable elements", "Same as a list but faster", "Mutable mapping"],
+      "answerIndex": 1,
+      "explanation": "A set is an unordered collection of unique elements. All elements must be hashable (immutable in practice)."
+    },
+    {
+      "id": "py-set-007",
+      "topic": "data_structures",
+      "question": "Why can't a set contain a list?",
+      "choices": ["Lists are too long", "Lists are mutable and unhashable", "Sets only hold numbers", "You can; lists are allowed"],
+      "answerIndex": 1,
+      "explanation": "Set elements must be hashable. Lists are mutable and therefore unhashable, so they cannot be set elements."
+    },
+    {
+      "id": "py-set-008",
+      "topic": "data_structures",
+      "question": "Can you do s[0] to get the first element of a set s?",
+      "choices": ["Yes", "No; sets are not subscriptable", "Yes, but order is arbitrary", "Only with .get(0)"],
+      "answerIndex": 1,
+      "explanation": "Sets are unordered and not subscriptable. Use s.pop() to get an arbitrary element, or iterate with for x in s."
+    },
+    {
+      "id": "py-set-009",
+      "topic": "data_structures",
+      "question": "How do you check if x is in a set s?",
+      "choices": ["s.contains(x)", "s.find(x)", "x in s", "s[x]"],
+      "answerIndex": 2,
+      "explanation": "Use the membership operator: x in s. It is O(1) average for sets. Use s.__contains__(x) only in special cases."
+    },
+    {
+      "id": "py-set-010",
+      "topic": "data_structures",
+      "question": "What does s.add(x) do?",
+      "choices": ["Adds x at index 0", "Adds x if not already in the set", "Replaces the first element with x", "Adds x and returns the set"],
+      "answerIndex": 1,
+      "explanation": "add(x) adds x to the set if it is not already present. It returns None and modifies the set in place."
+    },
+    {
+      "id": "py-set-011",
+      "topic": "data_structures",
+      "question": "What does s.update([1, 2, 3]) do?",
+      "choices": ["Replaces the set with {1, 2, 3}", "Adds the list as a single element", "Adds 1, 2, and 3 as elements to the set", "Raises TypeError"],
+      "answerIndex": 2,
+      "explanation": "update(iterable) adds each element from the iterable to the set. So update([1,2,3]) adds 1, 2, and 3."
+    },
+    {
+      "id": "py-set-012",
+      "topic": "data_structures",
+      "question": "What happens if you call s.remove(x) when x is not in the set?",
+      "choices": ["Nothing", "Adds x to the set", "KeyError", "ValueError"],
+      "answerIndex": 2,
+      "explanation": "remove(x) raises KeyError if x is not in the set. Use discard(x) to remove x if present without raising an error."
+    },
+    {
+      "id": "py-set-013",
+      "topic": "data_structures",
+      "question": "What happens if you call s.discard(x) when x is not in the set?",
+      "choices": ["KeyError", "ValueError", "Nothing; no error", "Removes a random element"],
+      "answerIndex": 2,
+      "explanation": "discard(x) removes x if it is in the set; if not, it does nothing and does not raise an error."
+    },
+    {
+      "id": "py-set-014",
+      "topic": "data_structures",
+      "question": "What does s.pop() do?",
+      "choices": ["Removes the last element", "Removes and returns an arbitrary element", "Removes the first element", "Returns the set without changing it"],
+      "answerIndex": 1,
+      "explanation": "pop() removes and returns an arbitrary element. Raises KeyError if the set is empty. Order is not defined."
+    },
+    {
+      "id": "py-set-015",
+      "topic": "data_structures",
+      "question": "What does s.clear() do?",
+      "choices": ["Returns a copy", "Removes all elements from the set", "Removes the first element", "Raises an error"],
+      "answerIndex": 1,
+      "explanation": "clear() removes every element from the set, leaving it empty. It returns None and modifies the set in place."
+    },
+    {
+      "id": "py-set-016",
+      "topic": "data_structures",
+      "question": "Is the iteration order of a set guaranteed?",
+      "choices": ["Yes, insertion order", "Yes, sorted order", "No; order is arbitrary and may vary", "Only in Python 3.7+"],
+      "answerIndex": 2,
+      "explanation": "Sets are unordered. Iteration order is not guaranteed and can change between runs or versions. Use sorted(s) for a fixed order."
+    },
+    {
+      "id": "py-set-017",
+      "topic": "data_structures",
+      "question": "\" \".join(s) when s is a set of strings: does it work?",
+      "choices": ["No; join requires a list", "Yes; join accepts any iterable, but order is arbitrary", "No; sets cannot contain strings", "Yes; order is alphabetical"],
+      "answerIndex": 1,
+      "explanation": "str.join() accepts any iterable of strings. A set works, but the order of concatenation is arbitrary (not insertion or alphabetical)."
+    },
+    {
+      "id": "py-set-018",
+      "topic": "data_structures",
+      "question": "What is a frozenset?",
+      "choices": ["A sorted set", "An immutable set", "A set that can only hold numbers", "A deprecated type"],
+      "answerIndex": 1,
+      "explanation": "frozenset is an immutable set. It has no add, remove, or update methods and is hashable, so it can be a dict key or set element."
+    },
+    {
+      "id": "py-set-019",
+      "topic": "data_structures",
+      "question": "Can a frozenset be used as a dict key?",
+      "choices": ["No", "Yes; frozensets are hashable", "Only if empty", "Only in Python 3.9+"],
+      "answerIndex": 1,
+      "explanation": "frozenset is hashable and immutable, so it can be a dict key or an element of another set. Plain set cannot."
+    },
+    {
+      "id": "py-set-020",
+      "topic": "data_structures",
+      "question": "Which set method returns elements that are in both sets?",
+      "choices": ["union", "intersection", "difference", "symmetric_difference"],
+      "answerIndex": 1,
+      "explanation": "intersection (& or intersection()) returns elements that are in both sets. a & b or a.intersection(b)."
+    },
+    {
+      "id": "py-set-021",
+      "topic": "data_structures",
+      "question": "Which set method returns elements in the first set but not the second?",
+      "choices": ["union", "intersection", "difference", "symmetric_difference"],
+      "answerIndex": 2,
+      "explanation": "difference (- or difference()) returns elements in the first set that are not in the second. a - b or a.difference(b)."
+    },
+    {
+      "id": "py-set-022",
+      "topic": "data_structures",
+      "question": "What does symmetric_difference return?",
+      "choices": ["Elements in both sets", "Elements in either set but not in both", "Elements only in the first set", "The union minus the intersection"],
+      "answerIndex": 1,
+      "explanation": "symmetric_difference (^ or symmetric_difference()) returns elements that are in either set but not in both."
+    },
+    {
+      "id": "py-set-023",
+      "topic": "data_structures",
+      "question": "s.issubset(t) is True when?",
+      "choices": ["s and t are equal", "Every element of s is in t", "Every element of t is in s", "s and t have no elements in common"],
+      "answerIndex": 1,
+      "explanation": "issubset(t) (or s <= t) is True if every element of s is in t. So s is a subset of t."
+    },
+    {
+      "id": "py-set-024",
+      "topic": "data_structures",
+      "question": "s.isdisjoint(t) is True when?",
+      "choices": ["s and t are equal", "s is a subset of t", "s and t have no elements in common", "s is empty"],
+      "answerIndex": 2,
+      "explanation": "isdisjoint(t) returns True if s and t have no elements in common. Useful to check for no overlap before combining."
+    },
+    {
+      "id": "py-set-025",
+      "topic": "data_structures",
+      "question": "What is the difference between difference() and difference_update()?",
+      "choices": ["They are the same", "difference() returns a new set; difference_update() modifies in place", "difference_update() is faster", "difference() modifies in place; difference_update() returns a new set"],
+      "answerIndex": 1,
+      "explanation": "difference(others) returns a new set (s unchanged). difference_update(others) removes from s the elements that are in the others and returns None."
+    }
+  ]
+}

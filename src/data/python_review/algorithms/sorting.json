@@ -1,0 +1,14 @@
+{
+  "schemaVersion": 1,
+  "name": "Sorting",
+  "description": "Questions on sorting algorithms and Python's sort.",
+  "language": "python",
+  "topic": "algorithms",
+  "questions": [
+    {"id": "py-sort-001", "topic": "algorithms", "question": "Python's built-in sort uses which algorithm?", "choices": ["Quicksort", "Mergesort", "Timsort", "Heapsort"], "answerIndex": 2, "explanation": "Python uses Timsort, a hybrid derived from merge sort and insertion sort, with O(n log n) worst case."},
+    {"id": "py-sort-002", "topic": "algorithms", "question": "What is the key difference between list.sort() and sorted(list)?", "choices": ["sorted is faster", "sort() mutates in place; sorted() returns a new list", "sort() works only on numbers", "There is no difference"], "answerIndex": 1, "explanation": "list.sort() sorts in place and returns None; sorted(iterable) returns a new sorted list and leaves the original unchanged."},
+    {"id": "py-sort-003", "topic": "algorithms", "question": "To sort a list of tuples by the second element, you would use:", "choices": ["key=1", "key=lambda x: x[1]", "key=second", "sort(by=1)"], "answerIndex": 1, "explanation": "key=lambda x: x[1] tells sort to compare using the second element of each tuple."},
+    {"id": "py-sort-004", "topic": "algorithms", "question": "What is the best typical time complexity of comparison-based sorting?", "choices": ["O(n)", "O(n log n)", "O(n^2)", "O(log n)"], "answerIndex": 1, "explanation": "Comparison-based sorts have a lower bound of Omega(n log n); optimal algorithms achieve O(n log n)."},
+    {"id": "py-sort-005", "topic": "algorithms", "question": "sorted([(1,'b'),(2,'a')], key=lambda x: x[1]) returns:", "choices": ["[(2,'a'),(1,'b')]", "[(1,'b'),(2,'a')]", "[(1,'a'),(2,'b')]", "Error"], "answerIndex": 0, "explanation": "Sorting by the second element (string) gives alphabetical order: 'a' before 'b', so (2,'a') comes first."}
+  ]
+}

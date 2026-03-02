@@ -1,0 +1,14 @@
+{
+  "schemaVersion": 1,
+  "name": "Space Complexity",
+  "description": "Questions on auxiliary space and memory usage.",
+  "language": "python",
+  "topic": "complexity",
+  "questions": [
+    {"id": "py-space-001", "topic": "complexity", "question": "Space complexity measures:", "choices": ["Runtime only", "Auxiliary memory used besides input", "Input size only", "Number of CPUs"], "answerIndex": 1, "explanation": "Space complexity usually refers to extra space (auxiliary) beyond the input."},
+    {"id": "py-space-002", "topic": "complexity", "question": "Creating a copy of a list of n elements uses:", "choices": ["O(1)", "O(log n)", "O(n)", "O(n^2)"], "answerIndex": 2, "explanation": "A full copy requires n additional slots, so O(n) space."},
+    {"id": "py-space-003", "topic": "complexity", "question": "Recursion without tail-call optimization uses space proportional to:", "choices": ["Input size only", "Depth of the call stack", "Number of variables", "Output size"], "answerIndex": 1, "explanation": "Each recursive call adds a stack frame; depth equals recursion depth."},
+    {"id": "py-space-004", "topic": "complexity", "question": "Building a set from n elements uses at least:", "choices": ["O(1)", "O(n)", "O(n^2)", "O(log n)"], "answerIndex": 1, "explanation": "You must store up to n distinct elements, so Omega(n) space."},
+    {"id": "py-space-005", "topic": "complexity", "question": "In-place sorting (e.g. list.sort()) uses:", "choices": ["O(n) extra space", "O(n log n) extra", "O(1) extra typically", "O(log n) extra only"], "answerIndex": 2, "explanation": "Timsort and similar in-place sorts use O(1) or small constant extra space."}
+  ]
+}

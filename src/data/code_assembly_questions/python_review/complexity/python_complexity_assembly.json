@@ -1,0 +1,112 @@
+{
+  "schemaVersion": 1,
+  "name": "Python Complexity Assembly",
+  "description": "Assemble snippets tied to time and space complexity reasoning.",
+  "questions": [
+    {
+      "id": "cx-assemble-001",
+      "question": "Assemble a single-pass loop over nums (O(n)).",
+      "tokens": ["for", "x", "in", "nums", ":", "while", "if"],
+      "validAnswers": [["for", "x", "in", "nums", ":"]],
+      "explanation": "One loop through n items is O(n)."
+    },
+    {
+      "id": "cx-assemble-002",
+      "question": "Assemble nested loops over nums and nums2 (O(n*m)).",
+      "tokens": ["for", "x", "in", "nums", ":", "for", "y", "in", "nums2", ":"],
+      "validAnswers": [["for", "x", "in", "nums", ":", "for", "y", "in", "nums2", ":"]],
+      "explanation": "Nested loops multiply iteration counts."
+    },
+    {
+      "id": "cx-assemble-003",
+      "question": "Assemble binary-search loop condition.",
+      "tokens": ["while", "left", "<=", "right", ":", "<", "!="],
+      "validAnswers": [["while", "left", "<=", "right", ":"]],
+      "explanation": "Binary search repeatedly halves search space."
+    },
+    {
+      "id": "cx-assemble-004",
+      "question": "Assemble midpoint update in binary search.",
+      "tokens": ["mid", "=", "(", "left", "+", "right", ")", "//", "2"],
+      "validAnswers": [["mid", "=", "(", "left", "+", "right", ")", "//", "2"]],
+      "explanation": "Midpoint picks center index each iteration."
+    },
+    {
+      "id": "cx-assemble-005",
+      "question": "Assemble left pointer move after consuming an element in sliding window.",
+      "tokens": ["left", "+=", "1", "-=", "1", "right"],
+      "validAnswers": [["left", "+=", "1"]],
+      "explanation": "Pointer increments are O(1) operations."
+    },
+    {
+      "id": "cx-assemble-006",
+      "question": "Assemble code to create an auxiliary copy of nums (extra O(n) space).",
+      "tokens": ["copy_nums", "=", "nums", "[", ":", "]", ".copy", "(", ")"],
+      "validAnswers": [["copy_nums", "=", "nums", "[", ":", "]"], ["copy_nums", "=", "nums", ".copy", "(", ")"]],
+      "explanation": "Copying list allocates additional linear memory."
+    },
+    {
+      "id": "cx-assemble-007",
+      "question": "Assemble in-place swap statement (O(1) extra space).",
+      "tokens": ["arr", "[", "i", "]", ",", "arr", "[", "j", "]", "=", "arr", "[", "j", "]", ",", "arr", "[", "i", "]"],
+      "validAnswers": [["arr", "[", "i", "]", ",", "arr", "[", "j", "]", "=", "arr", "[", "j", "]", ",", "arr", "[", "i", "]"]],
+      "explanation": "Swap without extra arrays keeps auxiliary space constant."
+    },
+    {
+      "id": "cx-assemble-008",
+      "question": "Assemble recursion base case check.",
+      "tokens": ["if", "n", "<=", "1", ":", "return", "n", "0"],
+      "validAnswers": [["if", "n", "<=", "1", ":", "return", "n"]],
+      "explanation": "Base case prevents infinite recursion."
+    },
+    {
+      "id": "cx-assemble-009",
+      "question": "Assemble memoization dictionary lookup guard.",
+      "tokens": ["if", "n", "in", "memo", ":", "return", "memo", "[", "n", "]"],
+      "validAnswers": [["if", "n", "in", "memo", ":", "return", "memo", "[", "n", "]"]],
+      "explanation": "Memoization avoids repeated subproblem work."
+    },
+    {
+      "id": "cx-assemble-010",
+      "question": "Assemble DP array initialization of length n+1 with zeros.",
+      "tokens": ["dp", "=", "[", "0", "]", "*", "(", "n", "+", "1", ")"],
+      "validAnswers": [["dp", "=", "[", "0", "]", "*", "(", "n", "+", "1", ")"]],
+      "explanation": "DP table stores subproblem answers."
+    },
+    {
+      "id": "cx-assemble-011",
+      "question": "Assemble code to sort nums before greedy processing.",
+      "tokens": ["nums", ".sort", "(", ")", "sorted", "(", "nums", ")"],
+      "validAnswers": [["nums", ".sort", "(", ")"]],
+      "explanation": "Greedy algorithms often start with sorting."
+    },
+    {
+      "id": "cx-assemble-012",
+      "question": "Assemble constant-time set membership test for value x.",
+      "tokens": ["if", "x", "in", "seen", ":", "list", "tuple"],
+      "validAnswers": [["if", "x", "in", "seen", ":"]],
+      "explanation": "Hash-set lookup is average O(1)."
+    },
+    {
+      "id": "cx-assemble-013",
+      "question": "Assemble append to output list result.",
+      "tokens": ["result", ".append", "(", "x", ")", ".add", ".push"],
+      "validAnswers": [["result", ".append", "(", "x", ")"]],
+      "explanation": "List append is amortized O(1)."
+    },
+    {
+      "id": "cx-assemble-014",
+      "question": "Assemble initialization of two pointers at opposite ends.",
+      "tokens": ["left", "=", "0", "right", "=", "len", "(", "arr", ")", "-", "1"],
+      "validAnswers": [["left", "=", "0"], ["right", "=", "len", "(", "arr", ")", "-", "1"]],
+      "explanation": "Two-pointer scans are often linear-time."
+    },
+    {
+      "id": "cx-assemble-015",
+      "question": "Assemble dictionary creation for counting frequencies in nums.",
+      "tokens": ["freq", "=", "{", "}", "for", "x", "in", "nums"],
+      "validAnswers": [["freq", "=", "{", "}"]],
+      "explanation": "Frequency map introduces O(n) extra space."
+    }
+  ]
+}

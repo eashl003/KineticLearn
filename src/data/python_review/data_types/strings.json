@@ -1,0 +1,14 @@
+{
+  "schemaVersion": 1,
+  "name": "Strings",
+  "description": "Questions on string operations, slicing, and encoding.",
+  "language": "python",
+  "topic": "data_types",
+  "questions": [
+    {"id": "py-str-001", "topic": "data_types", "question": "Strings in Python 3 are represented as:", "choices": ["ASCII only", "Unicode (sequence of code points)", "Bytes only", "UTF-16 only"], "answerIndex": 1, "explanation": "Python 3 str is a sequence of Unicode code points (text)."},
+    {"id": "py-str-002", "topic": "data_types", "question": "What does 'ab' + 'cd' produce?", "choices": ["'abcd'", "'a b c d'", "Error", "'ab cd'"], "answerIndex": 0, "explanation": "The + operator concatenates strings."},
+    {"id": "py-str-003", "topic": "data_types", "question": "Which is immutable?", "choices": ["list", "dict", "str", "set"], "answerIndex": 2, "explanation": "str is immutable; operations like replace return a new string."},
+    {"id": "py-str-004", "topic": "data_types", "question": "s.encode('utf-8') returns:", "choices": ["A str", "A bytes object", "A list of ints", "None"], "answerIndex": 1, "explanation": "encode converts a str to bytes using the given encoding."},
+    {"id": "py-str-005", "topic": "data_types", "question": "What is '  hi  '.strip()?", "choices": ["'  hi  '", "'hi'", "'hi  '", "'  hi'"], "answerIndex": 1, "explanation": "strip() removes leading and trailing whitespace."}
+  ]
+}

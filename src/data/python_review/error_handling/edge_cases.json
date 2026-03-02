@@ -1,0 +1,14 @@
+{
+  "schemaVersion": 1,
+  "name": "Edge Cases",
+  "description": "Questions on empty inputs, boundaries, and defensive checks.",
+  "language": "python",
+  "topic": "error_handling",
+  "questions": [
+    {"id": "py-edge-001", "topic": "error_handling", "question": "max([]) in Python raises:", "choices": ["None", "0", "ValueError", "TypeError"], "answerIndex": 2, "explanation": "max() of an empty sequence raises ValueError; there is no maximum."},
+    {"id": "py-edge-002", "topic": "error_handling", "question": "For a function that takes a list, an important edge case is:", "choices": ["List of one element", "Empty list", "List of strings", "Sorted list"], "answerIndex": 1, "explanation": "Empty list often needs special handling (e.g. return 0, None, or []) to avoid index errors."},
+    {"id": "py-edge-003", "topic": "error_handling", "question": "Division by zero in Python raises:", "choices": ["ValueError", "ZeroDivisionError", "RuntimeError", "None"], "answerIndex": 1, "explanation": "Dividing by zero raises ZeroDivisionError."},
+    {"id": "py-edge-004", "topic": "error_handling", "question": "Checking for None before using an optional value is an example of:", "choices": ["Optimization", "Defensive programming / edge case handling", "Refactoring", "Caching"], "answerIndex": 1, "explanation": "Handling None (and empty/zero) avoids AttributeError and logical bugs."},
+    {"id": "py-edge-005", "topic": "error_handling", "question": "lst[0] when lst is [] raises:", "choices": ["None", "ValueError", "IndexError", "KeyError"], "answerIndex": 2, "explanation": "Indexing an empty list (or out-of-range index) raises IndexError."}
+  ]
+}

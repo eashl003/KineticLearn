@@ -1,0 +1,14 @@
+{
+  "schemaVersion": 1,
+  "name": "Time Complexity",
+  "description": "Questions on analyzing and expressing time complexity.",
+  "language": "python",
+  "topic": "complexity",
+  "questions": [
+    {"id": "py-time-001", "topic": "complexity", "question": "A single loop over n elements is typically:", "choices": ["O(1)", "O(n)", "O(n^2)", "O(log n)"], "answerIndex": 1, "explanation": "One pass over n elements does a constant amount of work per element, so O(n)."},
+    {"id": "py-time-002", "topic": "complexity", "question": "Nested loops over n elements each (no early exit) is often:", "choices": ["O(n)", "O(n^2)", "O(2n)", "O(log n)"], "answerIndex": 1, "explanation": "For each of n iterations of the outer loop, the inner loop runs n times, so O(n^2)."},
+    {"id": "py-time-003", "topic": "complexity", "question": "list.insert(0, x) on a list of size n is:", "choices": ["O(1)", "O(n)", "O(log n)", "O(n log n)"], "answerIndex": 1, "explanation": "Inserting at index 0 shifts all elements, so O(n)."},
+    {"id": "py-time-004", "topic": "complexity", "question": "Looking up an element in a set of n elements is on average:", "choices": ["O(n)", "O(1)", "O(log n)", "O(n log n)"], "answerIndex": 1, "explanation": "Set membership uses hashing and is O(1) average."},
+    {"id": "py-time-005", "topic": "complexity", "question": "Sorting n elements with Python's sorted() is:", "choices": ["O(n)", "O(n log n)", "O(n^2)", "O(1)"], "answerIndex": 1, "explanation": "Timsort (used by sorted) is O(n log n) in the worst case."}
+  ]
+}

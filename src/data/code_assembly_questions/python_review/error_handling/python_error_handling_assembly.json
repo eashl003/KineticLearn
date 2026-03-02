@@ -1,0 +1,112 @@
+{
+  "schemaVersion": 1,
+  "name": "Python Error Handling Assembly",
+  "description": "Assemble common try/except/finally and validation patterns.",
+  "questions": [
+    {
+      "id": "eh-assemble-001",
+      "question": "Assemble a basic try-except catching ValueError.",
+      "tokens": ["try", ":", "except", "ValueError", ":", "catch", "Error"],
+      "validAnswers": [["try", ":", "except", "ValueError", ":"]],
+      "explanation": "Python uses try/except, not try/catch."
+    },
+    {
+      "id": "eh-assemble-002",
+      "question": "Assemble exception binding to variable e.",
+      "tokens": ["except", "ValueError", "as", "e", ":", "=>"],
+      "validAnswers": [["except", "ValueError", "as", "e", ":"]],
+      "explanation": "Use as to bind the exception object."
+    },
+    {
+      "id": "eh-assemble-003",
+      "question": "Assemble finally block header.",
+      "tokens": ["finally", ":", "except", "try"],
+      "validAnswers": [["finally", ":"]],
+      "explanation": "finally runs whether an exception occurred or not."
+    },
+    {
+      "id": "eh-assemble-004",
+      "question": "Assemble raise statement for ValueError with message.",
+      "tokens": ["raise", "ValueError", "(", "'bad input'", ")", "throw"],
+      "validAnswers": [["raise", "ValueError", "(", "'bad input'", ")"]],
+      "explanation": "raise is Python's keyword for exceptions."
+    },
+    {
+      "id": "eh-assemble-005",
+      "question": "Assemble assertion checking x is non-negative.",
+      "tokens": ["assert", "x", ">=", "0", ",", "'x must be non-negative'", "if"],
+      "validAnswers": [["assert", "x", ">=", "0", ",", "'x must be non-negative'"]],
+      "explanation": "assert is useful for internal sanity checks."
+    },
+    {
+      "id": "eh-assemble-006",
+      "question": "Assemble guarded int conversion from text s.",
+      "tokens": ["try", ":", "value", "=", "int", "(", "s", ")", "except", "ValueError", ":"],
+      "validAnswers": [["try", ":", "value", "=", "int", "(", "s", ")", "except", "ValueError", ":"]],
+      "explanation": "Wrap parsing in try/except to handle bad input."
+    },
+    {
+      "id": "eh-assemble-007",
+      "question": "Assemble code to re-raise current exception.",
+      "tokens": ["raise", "pass", "return"],
+      "validAnswers": [["raise"]],
+      "explanation": "Bare raise inside except rethrows the current exception."
+    },
+    {
+      "id": "eh-assemble-008",
+      "question": "Assemble code to open file safely with context manager.",
+      "tokens": ["with", "open", "(", "'data.txt'", ")", "as", "f", ":"],
+      "validAnswers": [["with", "open", "(", "'data.txt'", ")", "as", "f", ":"]],
+      "explanation": "with ensures the file is closed automatically."
+    },
+    {
+      "id": "eh-assemble-009",
+      "question": "Assemble condition that raises if user is not found.",
+      "tokens": ["if", "user", "is", "None", ":", "raise", "LookupError", "(", "'missing user'", ")"],
+      "validAnswers": [["if", "user", "is", "None", ":", "raise", "LookupError", "(", "'missing user'", ")"]],
+      "explanation": "Explicitly raise on invalid state."
+    },
+    {
+      "id": "eh-assemble-010",
+      "question": "Assemble except tuple catching both KeyError and IndexError.",
+      "tokens": ["except", "(", "KeyError", ",", "IndexError", ")", ":"],
+      "validAnswers": [["except", "(", "KeyError", ",", "IndexError", ")", ":"]],
+      "explanation": "Multiple exception types can be grouped in a tuple."
+    },
+    {
+      "id": "eh-assemble-011",
+      "question": "Assemble else block header used after successful try.",
+      "tokens": ["else", ":", "finally", "except"],
+      "validAnswers": [["else", ":"]],
+      "explanation": "else executes only when try block raises no exception."
+    },
+    {
+      "id": "eh-assemble-012",
+      "question": "Assemble expression to get dict key safely with default 0.",
+      "tokens": ["count", "=", "d", ".get", "(", "'k'", ",", "0", ")"],
+      "validAnswers": [["count", "=", "d", ".get", "(", "'k'", ",", "0", ")"]],
+      "explanation": "get avoids KeyError by supplying a fallback."
+    },
+    {
+      "id": "eh-assemble-013",
+      "question": "Assemble condition checking value is not None before use.",
+      "tokens": ["if", "value", "is", "not", "None", ":", "==", "null"],
+      "validAnswers": [["if", "value", "is", "not", "None", ":"]],
+      "explanation": "Use is not None for explicit None checks."
+    },
+    {
+      "id": "eh-assemble-014",
+      "question": "Assemble code to catch broad Exception as e.",
+      "tokens": ["except", "Exception", "as", "e", ":", "Error"],
+      "validAnswers": [["except", "Exception", "as", "e", ":"]],
+      "explanation": "Catching Exception is broad and should be used carefully."
+    },
+    {
+      "id": "eh-assemble-015",
+      "question": "Assemble cleanup call in finally block.",
+      "tokens": ["finally", ":", "resource", ".close", "(", ")", "return"],
+      "validAnswers": [["finally", ":", "resource", ".close", "(", ")"]],
+      "explanation": "Close resources in finally to ensure cleanup."
+    }
+  ]
+}

@@ -1,0 +1,112 @@
+{
+  "schemaVersion": 1,
+  "name": "Python Data Structures Assembly",
+  "description": "Assemble core list, dict, tuple, and set code lines.",
+  "questions": [
+    {
+      "id": "ds-assemble-001",
+      "question": "Assemble code to create an empty list named items.",
+      "tokens": ["items", "=", "[", "]", "list", "(", ")"],
+      "validAnswers": [["items", "=", "[", "]"], ["items", "=", "list", "(", ")"]],
+      "explanation": "Both [] and list() create an empty list."
+    },
+    {
+      "id": "ds-assemble-002",
+      "question": "Assemble code to append value 10 to list nums.",
+      "tokens": ["nums", ".append", "(", "10", ")", ".add", ".insert"],
+      "validAnswers": [["nums", ".append", "(", "10", ")"]],
+      "explanation": "append adds one item to a list."
+    },
+    {
+      "id": "ds-assemble-003",
+      "question": "Assemble code to remove key 'cat' from dictionary pets.",
+      "tokens": ["del", "pets", "[", "'cat'", "]", ".pop", "(", ")"],
+      "validAnswers": [["del", "pets", "[", "'cat'", "]"], ["pets", ".pop", "(", "'cat'", ")"]],
+      "explanation": "Use del or pop to remove dictionary keys."
+    },
+    {
+      "id": "ds-assemble-004",
+      "question": "Assemble code to read value for key 'name' with fallback '' from dict user.",
+      "tokens": ["user", ".get", "(", "'name'", ",", "''", ")", "[", "]"],
+      "validAnswers": [["user", ".get", "(", "'name'", ",", "''", ")"]],
+      "explanation": "dict.get avoids KeyError and supports default."
+    },
+    {
+      "id": "ds-assemble-005",
+      "question": "Assemble code to add 'python' to set tags.",
+      "tokens": ["tags", ".add", "(", "'python'", ")", ".append", ".push"],
+      "validAnswers": [["tags", ".add", "(", "'python'", ")"]],
+      "explanation": "Sets use add, not append."
+    },
+    {
+      "id": "ds-assemble-006",
+      "question": "Assemble code to create tuple point with values 3 and 4.",
+      "tokens": ["point", "=", "(", "3", ",", "4", ")", "[", "]"],
+      "validAnswers": [["point", "=", "(", "3", ",", "4", ")"]],
+      "explanation": "Tuple literals use parentheses and commas."
+    },
+    {
+      "id": "ds-assemble-007",
+      "question": "Assemble code to get first element of list nums.",
+      "tokens": ["nums", "[", "0", "]", ".first", "(", ")"],
+      "validAnswers": [["nums", "[", "0", "]"]],
+      "explanation": "Python indexing starts at 0."
+    },
+    {
+      "id": "ds-assemble-008",
+      "question": "Assemble code to slice first three elements of nums.",
+      "tokens": ["nums", "[", ":", "3", "]", "0", ".slice"],
+      "validAnswers": [["nums", "[", ":", "3", "]"], ["nums", "[", "0", ":", "3", "]"]],
+      "explanation": "Use slicing with [start:end]."
+    },
+    {
+      "id": "ds-assemble-009",
+      "question": "Assemble code to merge dictionaries d1 and d2 (new dict).",
+      "tokens": ["d1", "|", "d2", "+", ".merge", "(", ")"],
+      "validAnswers": [["d1", "|", "d2"]],
+      "explanation": "In Python 3.9+, | returns merged dict."
+    },
+    {
+      "id": "ds-assemble-010",
+      "question": "Assemble code to create set from list items.",
+      "tokens": ["set", "(", "items", ")", "{", "}", "frozenset"],
+      "validAnswers": [["set", "(", "items", ")"]],
+      "explanation": "set(iterable) creates a set."
+    },
+    {
+      "id": "ds-assemble-011",
+      "question": "Assemble code to reverse list nums in place.",
+      "tokens": ["nums", ".reverse", "(", ")", "reversed", ".sort"],
+      "validAnswers": [["nums", ".reverse", "(", ")"]],
+      "explanation": "reverse mutates the existing list."
+    },
+    {
+      "id": "ds-assemble-012",
+      "question": "Assemble code to count how many times 'a' appears in list letters.",
+      "tokens": ["letters", ".count", "(", "'a'", ")", ".index", ".find"],
+      "validAnswers": [["letters", ".count", "(", "'a'", ")"]],
+      "explanation": "count returns occurrence frequency."
+    },
+    {
+      "id": "ds-assemble-013",
+      "question": "Assemble code to sort list nums ascending in place.",
+      "tokens": ["nums", ".sort", "(", ")", "sorted", ".reverse"],
+      "validAnswers": [["nums", ".sort", "(", ")"]],
+      "explanation": "sort mutates list order in place."
+    },
+    {
+      "id": "ds-assemble-014",
+      "question": "Assemble code to create dict with key 'x' value 1.",
+      "tokens": ["d", "=", "{", "'x'", ":", "1", "}", "[", "]"],
+      "validAnswers": [["d", "=", "{", "'x'", ":", "1", "}"]],
+      "explanation": "Dictionary literals use curly braces."
+    },
+    {
+      "id": "ds-assemble-015",
+      "question": "Assemble loop to iterate key-value pairs of dict d.",
+      "tokens": ["for", "k", ",", "v", "in", "d", ".items", "(", ")", ":"],
+      "validAnswers": [["for", "k", ",", "v", "in", "d", ".items", "(", ")", ":"]],
+      "explanation": "d.items() yields key-value pairs."
+    }
+  ]
+}

@@ -1,0 +1,169 @@
+{
+  "schemaVersion": 1,
+  "name": "Python LISTS",
+  "description": "Questions on Python lists: access, change, add, remove, loop, sort, copy, join, and slicing.",
+  "language": "python",
+  "topic": "data_structures",
+  "questions": [
+    {
+      "id": "py-arr-001",
+      "topic": "data_structures",
+      "question": "What is the time complexity of appending to a Python list?",
+      "choices": ["O(n)", "O(log n)", "O(1) amortized", "O(n log n)"],
+      "answerIndex": 2,
+      "explanation": "Python lists use dynamic arrays. Append is O(1) amortized because the array doubles in size when full."
+    },
+    {
+      "id": "py-arr-002",
+      "topic": "data_structures",
+      "question": "What does my_list[::-1] return?",
+      "choices": ["Empty list", "First element", "Reversed copy", "Last element"],
+      "answerIndex": 2,
+      "explanation": "The slice [::-1] creates a reversed shallow copy of the list by stepping backwards."
+    },
+    {
+      "id": "py-arr-003",
+      "topic": "data_structures",
+      "question": "Which creates a new list without the element at index i?",
+      "choices": ["del lst[i]", "lst.remove(i)", "lst.pop(i)", "lst[:i] + lst[i+1:]"],
+      "answerIndex": 3,
+      "explanation": "Slicing lst[:i] + lst[i+1:] builds a new list without mutating the original. pop and remove mutate; del removes in place."
+    },
+    {
+      "id": "py-arr-004",
+      "topic": "data_structures",
+      "question": "What is the result of [1, 2, 3] * 2?",
+      "choices": ["[2, 4, 6]", "[1, 2, 3, 1, 2, 3]", "[[1,2,3],[1,2,3]]", "Error"],
+      "answerIndex": 1,
+      "explanation": "Multiplying a list by an integer repeats the list that many times, producing a shallow copy of references."
+    },
+    {
+      "id": "py-arr-005",
+      "topic": "data_structures",
+      "question": "What is the default value of the second argument in list.sort()?",
+      "choices": ["reverse=False", "key=None", "reverse=True", "inplace=True"],
+      "answerIndex": 1,
+      "explanation": "list.sort(key=None, reverse=False). key is the function used for comparison; None means natural order."
+    },
+    {
+      "id": "py-arr-006",
+      "topic": "data_structures",
+      "question": "Which is O(1) for a list?",
+      "choices": ["x in lst", "lst.append(x)", "lst.insert(0, x)", "lst.remove(x)"],
+      "answerIndex": 1,
+      "explanation": "append is amortized O(1). insert(0,x) and remove are O(n); 'in' is O(n) for lists."
+    },
+    {
+      "id": "py-arr-007",
+      "topic": "data_structures",
+      "question": "What does lst[-1] return?",
+      "choices": ["The first element", "The last element", "A reversed list", "Error if list is empty"],
+      "answerIndex": 1,
+      "explanation": "Negative indices count from the end. -1 is the last element, -2 the second-to-last, etc."
+    },
+    {
+      "id": "py-arr-008",
+      "topic": "data_structures",
+      "question": "If lst has length 5, what happens when you access lst[10]?",
+      "choices": ["Returns None", "Returns the last element", "IndexError", "Returns 0"],
+      "answerIndex": 2,
+      "explanation": "Accessing an index >= len(lst) raises IndexError. Use valid indices 0 through len(lst)-1 (or negative -1 through -len(lst))."
+    },
+    {
+      "id": "py-arr-009",
+      "topic": "data_structures",
+      "question": "How do you change the element at index 2 in a list?",
+      "choices": ["lst.set(2, value)", "lst[2] = value", "lst.change(2, value)", "lst.update(2, value)"],
+      "answerIndex": 1,
+      "explanation": "Lists are mutable; use index assignment: lst[i] = value. This modifies the list in place."
+    },
+    {
+      "id": "py-arr-010",
+      "topic": "data_structures",
+      "question": "What does lst.extend([2, 3]) do?",
+      "choices": ["Adds the list [2,3] as a single element", "Adds 2 and 3 as two elements to the end", "Replaces the list with [2,3]", "Inserts [2,3] at index 0"],
+      "answerIndex": 1,
+      "explanation": "extend(iterable) appends each item from the iterable. So extend([2,3]) adds two elements; append([2,3]) would add one nested list."
+    },
+    {
+      "id": "py-arr-011",
+      "topic": "data_structures",
+      "question": "lst.append([1,2]) vs lst.extend([1,2]): what is the difference?",
+      "choices": ["They do the same thing", "append adds one element (a list), extend adds two elements", "extend is faster", "append adds two elements, extend adds one"],
+      "answerIndex": 1,
+      "explanation": "append(x) adds x as a single element. extend(iterable) adds each item from the iterable. So append([1,2]) gives [..., [1,2]]; extend([1,2]) gives [..., 1, 2]."
+    },
+    {
+      "id": "py-arr-012",
+      "topic": "data_structures",
+      "question": "What does lst.pop() do (with no arguments)?",
+      "choices": ["Removes the first element", "Removes and returns the last element", "Removes all elements", "Returns the last element without removing it"],
+      "answerIndex": 1,
+      "explanation": "pop() with no argument removes and returns the last element. pop(i) removes and returns the element at index i. Both mutate the list."
+    },
+    {
+      "id": "py-arr-013",
+      "topic": "data_structures",
+      "question": "What does lst.remove(x) do?",
+      "choices": ["Removes the element at index x", "Removes the first occurrence of value x", "Removes all occurrences of x", "Removes the last occurrence of x"],
+      "answerIndex": 1,
+      "explanation": "remove(x) removes the first item whose value equals x. It raises ValueError if x is not in the list. Use del lst[i] to remove by index."
+    },
+    {
+      "id": "py-arr-014",
+      "topic": "data_structures",
+      "question": "In for i, x in enumerate(lst): what do i and x represent?",
+      "choices": ["i is the value, x is the index", "i is the index, x is the value", "Both are indices", "Both are values"],
+      "answerIndex": 1,
+      "explanation": "enumerate(iterable) yields (index, value) pairs. So i is the 0-based index and x is the element at that index."
+    },
+    {
+      "id": "py-arr-015",
+      "topic": "data_structures",
+      "question": "What does sorted(lst) return?",
+      "choices": ["None (sorts in place)", "A new sorted list", "The original list mutated", "A generator"],
+      "answerIndex": 1,
+      "explanation": "sorted(lst) returns a new list; it does not modify lst. lst.sort() sorts in place and returns None."
+    },
+    {
+      "id": "py-arr-016",
+      "topic": "data_structures",
+      "question": "What does lst.sort() return?",
+      "choices": ["The sorted list", "None", "True", "The original list"],
+      "answerIndex": 1,
+      "explanation": "list.sort() sorts the list in place and returns None. Use sorted(lst) if you need a new sorted list and want to keep the original."
+    },
+    {
+      "id": "py-arr-017",
+      "topic": "data_structures",
+      "question": "lst2 = lst[:] creates what?",
+      "choices": ["A reference to the same list", "A shallow copy", "A deep copy", "An empty list"],
+      "answerIndex": 1,
+      "explanation": "lst[:] is a shallow copy: a new list with the same elements. If elements are mutable (e.g. nested lists), those inner objects are shared. Use copy.deepcopy for full independence."
+    },
+    {
+      "id": "py-arr-018",
+      "topic": "data_structures",
+      "question": "When do you need copy.deepcopy for a list?",
+      "choices": ["Always", "Never; [:] is enough", "When the list contains mutable objects (e.g. nested lists)", "Only for lists of integers"],
+      "answerIndex": 2,
+      "explanation": "A shallow copy shares nested mutable objects. Changing a nested list in the copy affects the original. deepcopy creates independent copies of every nested object."
+    },
+    {
+      "id": "py-arr-019",
+      "topic": "data_structures",
+      "question": "What does \" \".join([\"a\", \"b\", \"c\"]) return?",
+      "choices": ["[\"a \", \"b \", \"c\"]", "\"a b c\"", "\"a\", \"b\", \"c\"", "Error: join is a list method"],
+      "answerIndex": 1,
+      "explanation": "str.join(iterable) joins the strings in the iterable with the separator. So \" \".join([\"a\",\"b\",\"c\"]) gives \"a b c\". The separator can be \"\", \"-\", etc."
+    },
+    {
+      "id": "py-arr-020",
+      "topic": "data_structures",
+      "question": "For lst = [1, 2, 3, 4, 5], what is lst[1:4]?",
+      "choices": ["[1, 2, 3, 4]", "[2, 3, 4]", "[1, 2, 3]", "[2, 3, 4, 5]"],
+      "answerIndex": 1,
+      "explanation": "Slicing [start:stop] includes start and excludes stop. lst[1:4] gives elements at indices 1, 2, 3 — the values 2, 3, 4."
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "schemaVersion": 1,
+  "name": "Lambda, map, filter",
+  "description": "Questions on lambda, map(), and filter().",
+  "language": "python",
+  "topic": "pythonic_patterns",
+  "questions": [
+    {"id": "py-lmf-001", "topic": "pythonic_patterns", "question": "lambda x: x + 1 is:", "choices": ["A function that takes x and returns x+1", "A number", "A list", "Invalid syntax"], "answerIndex": 0, "explanation": "lambda creates an anonymous function; here it adds 1 to its argument."},
+    {"id": "py-lmf-002", "topic": "pythonic_patterns", "question": "list(map(lambda x: x*2, [1,2,3])) returns:", "choices": ["[1,2,3]", "[2,4,6]", "[1,2,3,1,2,3]", "map object"], "answerIndex": 1, "explanation": "map applies the function to each element; list() collects the results."},
+    {"id": "py-lmf-003", "topic": "pythonic_patterns", "question": "list(filter(lambda x: x > 0, [-1,0,1,2])) returns:", "choices": ["[-1,0,1,2]", "[0,1,2]", "[1,2]", "filter object"], "answerIndex": 2, "explanation": "filter keeps only elements for which the function is true; 1 and 2 are > 0."},
+    {"id": "py-lmf-004", "topic": "pythonic_patterns", "question": "A lambda in Python can contain:", "choices": ["Only one expression", "Multiple statements", "return keyword", "Assignments"], "answerIndex": 0, "explanation": "Lambda must be a single expression; no statements, return, or assignments."},
+    {"id": "py-lmf-005", "topic": "pythonic_patterns", "question": "map and filter in Python 3 return:", "choices": ["Lists", "Generators (iterators)", "Tuples", "Sets"], "answerIndex": 1, "explanation": "In Python 3, map and filter return iterator objects; wrap in list() to get a list."}
+  ]
+}

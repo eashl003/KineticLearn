@@ -1,0 +1,14 @@
+{
+  "schemaVersion": 1,
+  "name": "Mutability",
+  "description": "Questions on mutable vs immutable types and side effects.",
+  "language": "python",
+  "topic": "data_types",
+  "questions": [
+    {"id": "py-mut-001", "topic": "data_types", "question": "Which of these Python types is mutable?", "choices": ["str", "tuple", "frozenset", "dict"], "answerIndex": 3, "explanation": "Dicts are mutable; str, tuple, and frozenset are immutable."},
+    {"id": "py-mut-002", "topic": "data_types", "question": "Passing a list to a function and appending inside the function:", "choices": ["Does not change the original list", "Changes the original list", "Raises an error", "Creates a copy"], "answerIndex": 1, "explanation": "Lists are mutable; the function receives a reference, so mutating it affects the caller's list."},
+    {"id": "py-mut-003", "topic": "data_types", "question": "Which is hashable?", "choices": ["list", "set", "tuple of ints", "dict"], "answerIndex": 2, "explanation": "Hashable types are immutable. A tuple of ints is hashable; list, set, and dict are not."},
+    {"id": "py-mut-004", "topic": "data_types", "question": "a = [1,2]; b = a; b.append(3). What is a?", "choices": ["[1,2]", "[1,2,3]", "[1,2],[1,2,3]", "Error"], "answerIndex": 1, "explanation": "a and b refer to the same list; appending to b mutates the same object as a."},
+    {"id": "py-mut-005", "topic": "data_types", "question": "To avoid mutating the original list you can:", "choices": ["Use append", "Use lst[:] or list(lst)", "Use lst only", "Use pop()"], "answerIndex": 1, "explanation": "lst[:] or list(lst) creates a shallow copy so modifications don't affect the original."}
+  ]
+}

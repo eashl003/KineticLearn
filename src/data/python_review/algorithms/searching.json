@@ -1,0 +1,14 @@
+{
+  "schemaVersion": 1,
+  "name": "Searching",
+  "description": "Questions on linear search, binary search, and search patterns.",
+  "language": "python",
+  "topic": "algorithms",
+  "questions": [
+    {"id": "py-search-001", "topic": "algorithms", "question": "Binary search on a sorted list of n elements has time complexity:", "choices": ["O(n)", "O(log n)", "O(n log n)", "O(1)"], "answerIndex": 1, "explanation": "Binary search halves the search space each step, so it runs in O(log n) comparisons."},
+    {"id": "py-search-002", "topic": "algorithms", "question": "For binary search, the input must be:", "choices": ["A list", "Sorted", "Unique elements", "Less than 1000 elements"], "answerIndex": 1, "explanation": "Binary search relies on the ordering of elements to eliminate half the space each step."},
+    {"id": "py-search-003", "topic": "algorithms", "question": "x in list for a Python list does:", "choices": ["Binary search", "Linear search", "Hash lookup", "Uses index() only"], "answerIndex": 1, "explanation": "Membership in a list is O(n) linear search; there is no assumption of ordering."},
+    {"id": "py-search-004", "topic": "algorithms", "question": "bisect_left([1,2,2,3], 2) returns:", "choices": ["1", "2", "3", "0"], "answerIndex": 0, "explanation": "bisect_left returns the leftmost index where 2 can be inserted to keep order; that index is 1."},
+    {"id": "py-search-005", "topic": "algorithms", "question": "Which data structure gives O(1) average membership test?", "choices": ["list", "tuple", "set", "sorted list"], "answerIndex": 2, "explanation": "Sets use hashing for O(1) average membership; lists and tuples are O(n)."}
+  ]
+}

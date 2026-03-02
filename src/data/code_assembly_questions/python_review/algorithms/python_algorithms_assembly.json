@@ -1,0 +1,112 @@
+{
+  "schemaVersion": 1,
+  "name": "Python Algorithms Assembly",
+  "description": "Assemble common algorithmic loop and pattern snippets in Python.",
+  "questions": [
+    {
+      "id": "alg-assemble-001",
+      "question": "Assemble a binary search midpoint calculation.",
+      "tokens": ["mid", "=", "(", "left", "+", "right", ")", "//", "2", "/", "3"],
+      "validAnswers": [["mid", "=", "(", "left", "+", "right", ")", "//", "2"]],
+      "explanation": "Integer midpoint in Python uses floor division."
+    },
+    {
+      "id": "alg-assemble-002",
+      "question": "Assemble the condition for binary search left half.",
+      "tokens": ["if", "nums", "[", "mid", "]", ">", "target", ":", "<"],
+      "validAnswers": [["if", "nums", "[", "mid", "]", ">", "target", ":"]],
+      "explanation": "Move to left half when midpoint value is greater."
+    },
+    {
+      "id": "alg-assemble-003",
+      "question": "Assemble two-pointer initialization for a sorted array pair problem.",
+      "tokens": ["left", "=", "0", "right", "len", "(", "nums", ")", "-", "1"],
+      "validAnswers": [["left", "=", "0"], ["right", "=", "len", "(", "nums", ")", "-", "1"]],
+      "explanation": "Typical two-pointer setup starts at both ends."
+    },
+    {
+      "id": "alg-assemble-004",
+      "question": "Assemble a sliding-window expansion step.",
+      "tokens": ["window_sum", "+=", "nums", "[", "right", "]", "-=", "left"],
+      "validAnswers": [["window_sum", "+=", "nums", "[", "right", "]"]],
+      "explanation": "Add incoming right element to the current window."
+    },
+    {
+      "id": "alg-assemble-005",
+      "question": "Assemble a sliding-window shrink step.",
+      "tokens": ["window_sum", "-=", "nums", "[", "left", "]", "+=", "right"],
+      "validAnswers": [["window_sum", "-=", "nums", "[", "left", "]"]],
+      "explanation": "Subtract outgoing left element when shrinking window."
+    },
+    {
+      "id": "alg-assemble-006",
+      "question": "Assemble recursive base case for factorial function.",
+      "tokens": ["if", "n", "==", "0", ":", "return", "1", "2"],
+      "validAnswers": [["if", "n", "==", "0", ":", "return", "1"]],
+      "explanation": "factorial(0) equals 1."
+    },
+    {
+      "id": "alg-assemble-007",
+      "question": "Assemble recursive step for factorial function.",
+      "tokens": ["return", "n", "*", "factorial", "(", "n", "-", "1", ")", "+"],
+      "validAnswers": [["return", "n", "*", "factorial", "(", "n", "-", "1", ")"]],
+      "explanation": "Factorial recursion multiplies by previous factorial."
+    },
+    {
+      "id": "alg-assemble-008",
+      "question": "Assemble dynamic-programming initialization for Fibonacci table.",
+      "tokens": ["dp", "=", "[", "0", ",", "1", "]", "*", "n"],
+      "validAnswers": [["dp", "=", "[", "0", ",", "1", "]"]],
+      "explanation": "Seed Fibonacci DP with first two values."
+    },
+    {
+      "id": "alg-assemble-009",
+      "question": "Assemble update step for running minimum.",
+      "tokens": ["min_val", "=", "min", "(", "min_val", ",", "x", ")", "max"],
+      "validAnswers": [["min_val", "=", "min", "(", "min_val", ",", "x", ")"]],
+      "explanation": "Update using built-in min each iteration."
+    },
+    {
+      "id": "alg-assemble-010",
+      "question": "Assemble loop header for iterating array indices and values.",
+      "tokens": ["for", "i", ",", "x", "in", "enumerate", "(", "nums", ")", ":"],
+      "validAnswers": [["for", "i", ",", "x", "in", "enumerate", "(", "nums", ")", ":"]],
+      "explanation": "enumerate gives index and element."
+    },
+    {
+      "id": "alg-assemble-011",
+      "question": "Assemble greedy interval selection condition.",
+      "tokens": ["if", "start", ">=", "last_end", ":", "<=", "return"],
+      "validAnswers": [["if", "start", ">=", "last_end", ":"]],
+      "explanation": "Take interval when it does not overlap previous end."
+    },
+    {
+      "id": "alg-assemble-012",
+      "question": "Assemble swap statement used in sorting.",
+      "tokens": ["nums", "[", "i", "]", ",", "nums", "[", "j", "]", "=", "nums", "[", "j", "]", ",", "nums", "[", "i", "]"],
+      "validAnswers": [["nums", "[", "i", "]", ",", "nums", "[", "j", "]", "=", "nums", "[", "j", "]", ",", "nums", "[", "i", "]"]],
+      "explanation": "Python tuple-unpacking swap is concise and idiomatic."
+    },
+    {
+      "id": "alg-assemble-013",
+      "question": "Assemble a condition used in linear search success check.",
+      "tokens": ["if", "x", "==", "target", ":", "!=", "break"],
+      "validAnswers": [["if", "x", "==", "target", ":"]],
+      "explanation": "Compare current item with target."
+    },
+    {
+      "id": "alg-assemble-014",
+      "question": "Assemble code to push node into queue list for BFS.",
+      "tokens": ["queue", ".append", "(", "node", ")", ".add", ".push"],
+      "validAnswers": [["queue", ".append", "(", "node", ")"]],
+      "explanation": "append is common when queue is represented as a list/deque append side."
+    },
+    {
+      "id": "alg-assemble-015",
+      "question": "Assemble condition that ends binary search loop.",
+      "tokens": ["while", "left", "<=", "right", ":", "<", "!="],
+      "validAnswers": [["while", "left", "<=", "right", ":"]],
+      "explanation": "Continue while search interval is valid."
+    }
+  ]
+}

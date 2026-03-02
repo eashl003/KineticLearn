@@ -1,0 +1,14 @@
+{
+  "schemaVersion": 1,
+  "name": "Dict Comprehensions",
+  "description": "Questions on dict comprehensions and key-value building.",
+  "language": "python",
+  "topic": "pythonic_patterns",
+  "questions": [
+    {"id": "py-dc-001", "topic": "pythonic_patterns", "question": "{x: x**2 for x in range(4)} produces:", "choices": ["{0:0, 1:1, 2:2, 3:3}", "{0:0, 1:1, 4:2, 9:3}", "{0:0, 1:1, 2:4, 3:9}", "[]"], "answerIndex": 2, "explanation": "Keys are 0,1,2,3 and values are their squares: 0,1,4,9."},
+    {"id": "py-dc-002", "topic": "pythonic_patterns", "question": "To swap keys and values of a dict d:", "choices": ["d.swap()", "{v: k for k, v in d.items()}", "{k: v for v, k in d}", "swap(d)"], "answerIndex": 1, "explanation": "Dict comprehension with v: k iterating over d.items() swaps key and value."},
+    {"id": "py-dc-003", "topic": "pythonic_patterns", "question": "{k: v for k, v in d.items() if v > 0} keeps:", "choices": ["All items", "Only keys", "Only items with value > 0", "Only first item"], "answerIndex": 2, "explanation": "The if clause filters to only (k,v) pairs where v > 0."},
+    {"id": "py-dc-004", "topic": "pythonic_patterns", "question": "Building a dict from two lists keys and values:", "choices": ["dict(keys, values)", "dict(zip(keys, values))", "keys + values", "dict(keys) + dict(values)"], "answerIndex": 1, "explanation": "zip(keys, values) pairs them; dict() accepts an iterable of (k,v) pairs."},
+    {"id": "py-dc-005", "topic": "pythonic_patterns", "question": "{(x, x+1): x for x in [1,2]} has keys:", "choices": ["1, 2", "(1, 2), (2, 3)", "[(1,2),(2,3)]", "Tuples are not allowed"], "answerIndex": 1, "explanation": "Keys are (1,2) and (2,3); values are 1 and 2. Tuples are valid keys."}
+  ]
+}

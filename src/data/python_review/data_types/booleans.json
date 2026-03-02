@@ -1,0 +1,14 @@
+{
+  "schemaVersion": 1,
+  "name": "Booleans",
+  "description": "Questions on bool, truthiness, and short-circuit evaluation.",
+  "language": "python",
+  "topic": "data_types",
+  "questions": [
+    {"id": "py-bool-001", "topic": "data_types", "question": "bool(0) and bool('') are:", "choices": ["True, True", "False, False", "True, False", "False, True"], "answerIndex": 1, "explanation": "Zero and empty string are falsy; bool(0) and bool('') are False."},
+    {"id": "py-bool-002", "topic": "data_types", "question": "What is the type of True and False?", "choices": ["int", "bool", "str", "bool, subclass of int"], "answerIndex": 3, "explanation": "bool is a subclass of int; True is 1, False is 0."},
+    {"id": "py-bool-003", "topic": "data_types", "question": "In (a and b), if a is falsy, Python:", "choices": ["Evaluates b", "Returns a without evaluating b", "Raises an error", "Returns None"], "answerIndex": 1, "explanation": "and short-circuits: if a is falsy, the result is a and b is not evaluated."},
+    {"id": "py-bool-004", "topic": "data_types", "question": "[] or 'default' returns:", "choices": ["[]", "'default'", "None", "Error"], "answerIndex": 1, "explanation": "[] is falsy; or returns the first truthy value, so 'default'."},
+    {"id": "py-bool-005", "topic": "data_types", "question": "Which is truthy?", "choices": ["None", "[]", "[0]", "0"], "answerIndex": 2, "explanation": "A non-empty list [0] is truthy even though its element is 0."}
+  ]
+}

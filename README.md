@@ -1,6 +1,6 @@
 # KineticLearn
 
-A fully client-side React app for practicing technical interview questions using hand gestures, speech recognition, and an in-browser AI coach. No backend, no database. Everything runs locally in your browser. 
+A fully client-side React app for learning, using hand gestures, speech recognition, and an in-browser AI coach. No backend, no database. Everything runs locally in your browser. 
 
 **Live demo:** [https://eashl003.github.io/KineticLearn/](https://eashl003.github.io/KineticLearn/)
 

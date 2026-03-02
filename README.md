@@ -1,6 +1,6 @@
 # KineticLearn
 
-A fully client-side React app for learning, using hand gestures, speech recognition, and an in-browser AI coach. No backend, no database. Everything runs locally in your browser. 
+Redefining the web learning experience with WebAI. An open-source, fully client-side React app for learning—using hand gestures, eye tracking, speech recognition, and an in-browser AI coach. No backend, no database. Everything runs locally in your browser.
 
 **Live demo:** [https://eashl003.github.io/KineticLearn/](https://eashl003.github.io/KineticLearn/)
 
@@ -16,6 +16,16 @@ A fully client-side React app for learning, using hand gestures, speech recognit
 - Import your own question sets by pasting JSON — validated and stored in localStorage.
 - Switch between built-in and custom question sets via a dropdown.
 - Progress is saved per question set across browser sessions.
+
+### Review Mode (Eye Tracking)
+
+- Same bubble quiz experience — select answers using **gaze direction** and **blink detection** instead of hand gestures.
+- Accessible and hands-free option for review practice.
+
+### Code Assembly
+
+- Assemble Python code from token fragments using **hand gestures** or click/tap.
+- Build correct snippets by pointing and selecting tokens over your webcam feed.
 
 ### Problems Mode — Coding Practice
 
@@ -130,9 +140,11 @@ src/
 ├── app/                  # App entry, router
 ├── components/
 │   ├── layout/           # Header, shell
-│   ├── review/           # ReviewContainer, BubbleField, Bubble, PoweredBy
-│   └── problems/         # SketchCanvas, SpeechPanel, CodeEditor,
-│                         # EvidencePanel, FeedbackPanel, NotesPanel
+│   ├── modals/           # SupportOpenSourceModal
+│   ├── review/           # ReviewContainer, BubbleField, Bubble, CodeAssemblyContainer,
+│   │                     # TokenField, TokenPill, EyeTrackingReviewContainer, PoweredBy
+│   └── problems/         # SketchCanvas, SpeechPanel, CodeEditor, EvidencePanel,
+│                         # FeedbackPanel, NotesPanel, ProblemPrompt, ProblemsList
 ├── data/                 # Built-in question/problem JSON files
 ├── lib/
 │   ├── mediapipe/        # Gesture recognizer, camera, coordinate mapping

@@ -1,6 +1,7 @@
 import { useState, useRef, useCallback } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import problemsData from '../data/problems.json';
+import { DirectionsCollapsible } from '../components/layout/DirectionsCollapsible';
 import { ProblemPrompt } from '../components/problems/ProblemPrompt';
 import { SketchCanvas } from '../components/problems/SketchCanvas';
 import type { SketchCanvasHandle } from '../components/problems/SketchCanvas';
@@ -56,6 +57,16 @@ export function ProblemSolvePage() {
 
   return (
     <div className="page solve-page">
+      <DirectionsCollapsible defaultExpanded>
+        <p><strong>Problem solving.</strong> Use the tools below to work through this coding challenge.</p>
+        <ul>
+          <li><strong>Sketch:</strong> Draw pseudocode or diagrams on the canvas.</li>
+          <li><strong>Think out loud:</strong> Use speech-to-text or type to reason through the problem.</li>
+          <li><strong>Code:</strong> Write your solution in the editor.</li>
+          <li><strong>Evidence:</strong> Export your sketch and transcript together for review.</li>
+          <li><strong>AI feedback:</strong> Get in-browser feedback on your approach (requires WebGPU).</li>
+        </ul>
+      </DirectionsCollapsible>
       <Link to="/problems" className="back-link">
         &larr; Back to Problems
       </Link>

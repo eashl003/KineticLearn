@@ -54,7 +54,7 @@ export function Header() {
           title="Support KineticLearn"
           onClick={openSupportModal}
         >
-          <span className="header-nav-emoji" aria-hidden>☕</span>
+          <img src={`${import.meta.env.BASE_URL}assets/coffee.png`} alt="" aria-hidden className="header-nav-coffee-img" />
           <span className="header-nav-support-label">Support KineticLearn</span>
         </button>
         <button type="button" className="header-clear clear-btn" onClick={handleClear}>

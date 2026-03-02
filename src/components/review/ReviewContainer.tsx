@@ -25,12 +25,6 @@ import {
   loadActiveReviewQuestionSetId,
   type StoredReviewQuestionSet,
 } from '../../lib/storage/localStore';
-import {
-  initLLMEngine,
-  streamChat,
-  buildQuestionGenPrompt,
-} from '../../lib/evaluate/llm';
-import type { MLCEngine } from '@mlc-ai/web-llm';
 
 interface Question {
   id: string;
@@ -64,15 +58,21 @@ const SWIPE_MAX_DURATION_MS = 900;
 const SWIPE_COOLDOWN_MS = 900;
 const LOG = '[ReviewMode]';
 
-const LLM_FORMAT_PROMPT = `Generate a technical interview review question set as valid JSON only (no markdown, no explanation). Use this exact structure:
+const REVIEW_FORMAT_PROMPT = `Topic: [Your topic you wish to study]
+Description: [Optional: difficulty, focus, learner level]
 
+You are creating a multiple-choice quiz set. Each question has exactly 4 choices and one correct answer.
+Return ONLY valid JSON (no markdown, no explanation, no backticks).
+Generate exactly 8 questions for the topic above.
+
+Output this exact top-level structure:
 {
   "schemaVersion": 1,
-  "name": "Your Set Name",
-  "description": "One sentence describing the set.",
+  "name": "string",
+  "description": "string",
   "questions": [
     {
-      "id": "unique-id-001",
+      "id": "string",
       "topic": "topic-slug",
       "question": "Your question text?",
       "choices": ["Option A", "Option B", "Option C", "Option D"],
@@ -82,7 +82,14 @@ const LLM_FORMAT_PROMPT = `Generate a technical interview review question set as
   ]
 }
 
-Rules: 5-10 questions, exactly 4 choices per question, answerIndex 0-3, unique ids.`;
+Hard requirements:
+- "questions" must contain exactly 8 items.
+- Each question must have exactly 4 choices.
+- "answerIndex" must be 0–3 (index of the correct choice).
+- All question "id" values must be unique strings.
+- "topic" should be a short slug describing the category (e.g. "python-basics", "world-history").
+- Fill "name" and "description" using the provided Topic/Description.
+- Return one JSON object only.`;
 
 function toCustomSetId(name: string): string {
   const clean = name
@@ -278,12 +285,6 @@ export function ReviewContainer() {
   const [newSetJson, setNewSetJson] = useState('');
   const [setValidationErrors, setSetValidationErrors] = useState<string[]>([]);
 
-  const [genTopic, setGenTopic] = useState('');
-  const [genDescription, setGenDescription] = useState('');
-  const [genLoading, setGenLoading] = useState(false);
-  const [genProgress, setGenProgress] = useState('');
-  const [genError, setGenError] = useState<string | null>(null);
-  const genEngineRef = useRef<MLCEngine | null>(null);
   const [formatCopied, setFormatCopied] = useState(false);
 
   // Refs to avoid stale closures in the detection loop
@@ -824,60 +825,13 @@ export function ReviewContainer() {
 
   const handleCopyFormat = useCallback(async () => {
     try {
-      await navigator.clipboard.writeText(LLM_FORMAT_PROMPT);
+      await navigator.clipboard.writeText(REVIEW_FORMAT_PROMPT);
       setFormatCopied(true);
       window.setTimeout(() => setFormatCopied(false), 2000);
     } catch {
       setFormatCopied(false);
     }
   }, []);
-
-  const handleGenerateQuestions = useCallback(async () => {
-    if (!genTopic.trim()) return;
-
-    if (!(navigator as unknown as Record<string, unknown>).gpu) {
-      setGenError('WebGPU is not supported in this browser. Use Chrome or Edge.');
-      return;
-    }
-
-    setGenLoading(true);
-    setGenError(null);
-    setNewSetJson('');
-    setSetValidationErrors([]);
-
-    try {
-      const engine = await initLLMEngine((p) => setGenProgress(p.text));
-      genEngineRef.current = engine;
-      setGenProgress('');
-
-      const messages = [
-        {
-          role: 'system' as const,
-          content: buildQuestionGenPrompt(genTopic.trim(), genDescription.trim()),
-        },
-        { role: 'user' as const, content: 'Generate the questions now.' },
-      ];
-
-      const raw = await streamChat(
-        engine,
-        messages,
-        (partial) => setNewSetJson(partial),
-        2048,
-      );
-
-      const cleaned = raw
-        .replace(/^```(?:json)?\s*/i, '')
-        .replace(/\s*```\s*$/, '')
-        .trim();
-      setNewSetJson(cleaned);
-    } catch (err) {
-      console.error('Question generation failed:', err);
-      setGenError('Generation failed. Check console and try again.');
-    } finally {
-      setGenLoading(false);
-      setGenProgress('');
-    }
-  }, [genTopic, genDescription]);
 
   useEffect(() => {
     handleNextRef.current = handleNext;
@@ -1077,116 +1031,68 @@ export function ReviewContainer() {
 
       {showAddSetModal && (
         <div className="review-modal-backdrop" role="dialog" aria-modal="true">
-          <div className="review-modal">
+          <div className="review-modal assembly-add-modal">
             <div className="review-modal-scroll">
-              <h3>Add New Questions</h3>
+              <h3>Add your own study questions</h3>
               <p className="review-modal-intro">
-                Choose one way to get your questions, then paste or review the JSON in the box at the bottom and click Apply.
+                You can create new question sets using a free chatbot (like ChatGPT, Copilot, or Gemini). Follow the two steps below.
               </p>
 
-              <div className="review-option review-option-recommend">
-                <p className="review-option-label">Option 1: Use ChatGPT / Copilot / Gemini (recommended)</p>
-                <p className="review-recommend-text">
-                  Our in-browser model can be slow. For best experience, use an external LLM: copy the format below, paste it into ChatGPT (or Copilot, Gemini, etc.), add your topic or instructions, then paste the generated JSON into the box at the bottom.
-                </p>
+              <div className="assembly-add-step">
+                <p className="assembly-add-step-title">Step 1: Get questions from a chatbot</p>
+                <ol className="assembly-add-step-list">
+                  <li>Click the &quot;Copy the text below&quot; button.</li>
+                  <li>Open a chatbot you use (e.g. ChatGPT, Microsoft Copilot, or Google Gemini) in another tab or app.</li>
+                  <li>At the top of the copied text you&apos;ll see <strong>Topic:</strong> and <strong>Description:</strong>. Replace the brackets with what you want to study (e.g. &quot;Python decorators&quot; or &quot;Data structures&quot;).</li>
+                  <li>Paste the whole text into the chatbot and send it. The chatbot will reply with a block of text.</li>
+                  <li>Copy everything the chatbot gives you — you&apos;ll need it for Step 2.</li>
+                </ol>
                 <div className="review-format-block">
-                  <pre className="review-format-pre">{LLM_FORMAT_PROMPT}</pre>
+                  <pre className="review-format-pre">{REVIEW_FORMAT_PROMPT}</pre>
                   <button
                     type="button"
                     className="btn btn-sm review-copy-format-btn"
                     onClick={handleCopyFormat}
                   >
-                    {formatCopied ? 'Copied!' : 'Copy format for ChatGPT / Copilot / Gemini'}
+                    {formatCopied ? 'Copied!' : 'Copy the text below'}
                   </button>
                 </div>
               </div>
 
-              <div className="review-option review-option-inline">
-                <p className="review-option-label">Option 2: Generate in this browser</p>
-                <p className="review-option-desc">Uses a slower in-browser model. Enter a topic and description, then click Generate. The result will appear in the JSON box below for you to review.</p>
-                <div className="review-gen-section">
-                  <div className="review-gen-inputs">
-                    <input
-                      type="text"
-                      className="review-gen-input"
-                      placeholder="Topic (e.g. Python decorators)"
-                      value={genTopic}
-                      onChange={(e) => setGenTopic(e.target.value)}
-                      disabled={genLoading}
-                    />
-                    <input
-                      type="text"
-                      className="review-gen-input"
-                      placeholder="Brief description (e.g. intermediate-level questions)"
-                      value={genDescription}
-                      onChange={(e) => setGenDescription(e.target.value)}
-                      disabled={genLoading}
-                    />
-                  </div>
-                  <div className="review-gen-row">
-                    <button
-                      className="btn btn-sm ai-btn-active"
-                      onClick={handleGenerateQuestions}
-                      disabled={!genTopic.trim() || genLoading}
-                    >
-                      {genLoading ? 'Generating...' : 'Generate'}
-                    </button>
-                    {genProgress && (
-                      <span className="review-gen-progress">{genProgress}</span>
-                    )}
-                  </div>
-                  {genError && <p className="status-error">{genError}</p>}
-                </div>
+              <div className="assembly-add-step">
+                <p className="assembly-add-step-title">Step 2: Add the questions to this app</p>
+                <ol className="assembly-add-step-list">
+                  <li>Paste the text you copied from the chatbot into the box below.</li>
+                  <li>Click <strong>Add questions</strong>. Your new set will appear in the &quot;Question set&quot; dropdown and you can start practicing.</li>
+                </ol>
+                <label htmlFor="review-paste-box" className="review-json-label">Paste what the chatbot gave you here:</label>
+                <textarea
+                  id="review-paste-box"
+                  className="review-json-input"
+                  value={newSetJson}
+                  onChange={(e) => setNewSetJson(e.target.value)}
+                  placeholder="Paste the chatbot's reply here..."
+                  rows={10}
+                />
+                {setValidationErrors.length > 0 && (
+                  <ul className="review-validation-errors">
+                    {setValidationErrors.map((err) => (
+                      <li key={err}>{err}</li>
+                    ))}
+                  </ul>
+                )}
               </div>
-
-              <p className="review-json-label">Your JSON — paste from Option 1 or from Option 2 above, then click Apply</p>
-              <textarea
-                className="review-json-input"
-                value={newSetJson}
-                onChange={(e) => setNewSetJson(e.target.value)}
-                disabled={genLoading}
-                placeholder={`{
-  "schemaVersion": 1,
-  "name": "My Python Set",
-  "description": "Warmup questions",
-  "questions": [
-    {
-      "id": "my-001",
-      "topic": "python-basics",
-      "question": "Example?",
-      "choices": ["a", "b", "c", "d"],
-      "answerIndex": 2,
-      "explanation": "..."
-    }
-  ]
-}`}
-                rows={14}
-              />
-              {setValidationErrors.length > 0 && (
-                <ul className="review-validation-errors">
-                  {setValidationErrors.map((err) => (
-                    <li key={err}>{err}</li>
-                  ))}
-                </ul>
-              )}
             </div>
             <div className="review-modal-actions">
               <button
+                type="button"
                 className="btn btn-outline"
-                onClick={() => {
-                  setSetValidationErrors([]);
-                  setShowAddSetModal(false);
-                }}
-                disabled={genLoading}
+                onClick={() => { setSetValidationErrors([]); setShowAddSetModal(false); }}
               >
                 Cancel
               </button>
-              <button
-                className="btn"
-                onClick={handleApplyNewQuestionSet}
-                disabled={genLoading}
-              >
-                Apply
+              <button type="button" className="btn" onClick={handleApplyNewQuestionSet}>
+                Add questions
               </button>
             </div>
           </div>

@@ -17,19 +17,19 @@ export function HomePage() {
       </button>
       <div className="home-cards">
         <Link to="/review" className="home-card">
-          <h2>Review Mode</h2>
+          <h2>Pop the Bubble! 👋</h2>
           <p>Pop the bubble! Answer Python questions using hand gestures or click/tap.</p>
         </Link>
         <Link to="/review-eye" className="home-card">
-          <h2>Review Mode (Eye Tracking)</h2>
+          <h2>Spot and Blink! 👁️</h2>
           <p>Same bubble quiz — select answers with gaze direction and blink detection.</p>
         </Link>
         <Link to="/code-assembly" className="home-card">
-          <h2>Code Assembly</h2>
+          <h2>Code Assembly! 🧩</h2>
           <p>Assemble Python code from token fragments using hand gestures or click/tap.</p>
         </Link>
         <Link to="/problems" className="home-card">
-          <h2>Problems Mode</h2>
+          <h2>Problems Mode 📝</h2>
           <p>Solve coding problems with sketch + speech recognition.</p>
         </Link>
       </div>

@@ -1,4 +1,4 @@
-const PREFIX = 'interview-prep:';
+const PREFIX = 'kineticlearn:';
 
 export interface ReviewProgress {
   currentIndex: number;

@@ -82,7 +82,7 @@ const BUILT_IN_CORE_ID = 'built-in-python-core';
 const pythonCoreSet: ReviewQuestionSet = {
   ...toSet(reviewQuestionsData as QuestionFile, BUILT_IN_CORE_ID, 'core'),
   name: 'Python Core Review',
-  description: 'Default interview prep question set bundled with the app.',
+  description: 'Default learning question set bundled with the app.',
 };
 
 const topicSets: ReviewQuestionSet[] = [

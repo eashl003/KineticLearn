@@ -51,11 +51,11 @@ export function Header() {
         <button
           type="button"
           className="header-nav-icon tool-pill header-nav-support"
-          title="Support Open Source"
+          title="Support KineticLearn"
           onClick={openSupportModal}
         >
           <span className="header-nav-emoji" aria-hidden>☕</span>
-          <span className="header-nav-support-label">Support Open Source</span>
+          <span className="header-nav-support-label">Support KineticLearn</span>
         </button>
         <button type="button" className="header-clear clear-btn" onClick={handleClear}>
           Clear Data

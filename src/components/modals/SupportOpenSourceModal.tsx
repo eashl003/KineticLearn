@@ -28,8 +28,13 @@ export function SupportOpenSourceModal({ open, onClose }: SupportOpenSourceModal
         <div className="support-modal-content">
           <div className="support-modal-title-block">
             <p id="support-modal-subtitle" className="support-modal-witty">
-              <span className="support-modal-witty-line1">Nailed the interview? Landed the offer?</span>
-              <span className="support-modal-witty-accent" aria-hidden> ☕</span>
+              <span className="support-modal-witty-line1">Aced your final and graduated?! Landed the offer?!</span>
+              <img
+              src={`${import.meta.env.BASE_URL}assets/coffee.png`}
+              alt=""
+              className="support-modal-coffee-img"
+              aria-hidden
+            />
               <br />
               <span className="support-modal-witty-line2">I hope to keep KineticLearn free and keep evolving the platform, so consider buying me a coffee. It&apos;s much appreciated!</span>
             </p>

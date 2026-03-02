@@ -2,7 +2,7 @@
 
 A fully client-side React app for practicing technical interview questions using hand gestures, speech recognition, and an in-browser AI coach. No backend, no database — everything runs locally in your browser.
 
-**Live demo:** [https://eashl003.github.io/interactive-technical-interview-prep/](https://eashl003.github.io/interactive-technical-interview-prep/)
+**Live demo:** [https://eashl003.github.io/KineticLearn/](https://eashl003.github.io/KineticLearn/)
 
 ## Features
 
@@ -58,13 +58,13 @@ A fully client-side React app for practicing technical interview questions using
 ### Install and run locally
 
 ```bash
-git clone https://github.com/eashl003/interactive-technical-interview-prep.git
-cd interactive-technical-interview-prep
+git clone https://github.com/eashl003/KineticLearn.git
+cd KineticLearn
 npm install
 npm run dev
 ```
 
-Open [http://localhost:5173/interactive-technical-interview-prep/](http://localhost:5173/interactive-technical-interview-prep/) in your browser.
+Open [http://localhost:5173/KineticLearn/](http://localhost:5173/KineticLearn/) in your browser.
 
 ### Build for production
 
@@ -91,7 +91,7 @@ To set up GitHub Pages for the first time:
 3. Set branch to `gh-pages` and folder to `/ (root)`.
 4. Click **Save**.
 
-Your app will be live at `https://<username>.github.io/interactive-technical-interview-prep/`.
+Your app will be live at `https://<username>.github.io/KineticLearn/`.
 
 ## Adding Custom Question Sets
 

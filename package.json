@@ -1,9 +1,9 @@
 {
-  "name": "interactive-technical-interview-prep",
+  "name": "KineticLearn",
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://eashl003.github.io/interactive-technical-interview-prep",
+  "homepage": "https://eashl003.github.io/KineticLearn",
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",

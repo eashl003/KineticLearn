@@ -184,12 +184,23 @@ button {
   color: #fff;
 }
 
+.header-nav-icon.header-nav-support.tool-pill {
+  border: 2px solid #8b5cf6;
+  color: #8b5cf6;
+}
+
+.header-nav-icon.header-nav-support.tool-pill:hover {
+  border-color: #a78bfa;
+  color: #a78bfa;
+}
+
 .header-nav-support .header-nav-support-label {
   display: none;
   margin-left: 0.35rem;
-  font-size: 0.8rem;
+  font-size: 1rem;
   font-weight: 600;
   white-space: nowrap;
+  color: inherit;
 }
 
 @media (min-width: 640px) {
@@ -300,6 +311,15 @@ button {
   -webkit-text-fill-color: initial;
   background: none;
   filter: none;
+}
+
+.support-modal-coffee-img {
+  display: inline-block;
+  vertical-align: middle;
+  width: 70px;
+  height: 70px;
+  object-fit: contain;
+  margin-left: 0.25rem;
 }
 
 .support-modal-witty-line2 {
@@ -536,13 +556,23 @@ button {
   gap: 0.5rem;
   margin-top: 2.5rem;
   padding-top: 2rem;
-  border-top: 1px solid var(--border);
 }
 
 .home-more-arrow {
-  font-size: 1.5rem;
+  display: inline-flex;
   color: var(--accent);
-  opacity: 0.9;
+  opacity: 0.95;
+  filter: drop-shadow(0 0 8px rgba(139, 92, 246, 0.6)) drop-shadow(0 0 16px rgba(139, 92, 246, 0.35));
+  animation: home-chevron-bounce 2s ease-in-out infinite;
+}
+
+.home-more-arrow svg {
+  display: block;
+}
+
+@keyframes home-chevron-bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(6px); }
 }
 
 .home-more-text {

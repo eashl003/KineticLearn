@@ -13,7 +13,7 @@ export function HomePage() {
         className="home-donate-cta"
         onClick={openSupportModal}
       >
-        Consider donating ☕
+        Support KineticLearn
       </button>
       <div className="home-cards">
         <Link to="/review" className="home-card">

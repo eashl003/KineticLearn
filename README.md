@@ -1,12 +1,12 @@
 # KineticLearn
 
-Redefining the web learning experience with WebAI. An open-source, fully client-side React app for learning—using hand gestures, eye tracking, speech recognition, and an in-browser AI coach. No backend, no database. Everything runs locally in your browser.
+Redefining the web learning experience with WebAI. An open-source, fully client-side React app for learning, using hand gestures, eye tracking, speech recognition, and an in-browser AI coach. No backend, no database. Everything runs locally in your browser.
 
 **Live demo:** [https://eashl003.github.io/KineticLearn/](https://eashl003.github.io/KineticLearn/)
 
 ## Features
 
-### Review Mode — "Pop the Bubble"
+### Review Mode: "Pop the Bubble"
 
 - Multiple-choice Python questions displayed as floating bubbles over your live webcam feed.
 - **Point** at the correct bubble with your index finger to select an answer (MediaPipe hand tracking).
@@ -17,7 +17,7 @@ Redefining the web learning experience with WebAI. An open-source, fully client-
 - Switch between built-in and custom question sets via a dropdown.
 - Progress is saved per question set across browser sessions.
 
-### Review Mode (Eye Tracking)
+### Review Mode: (Eye Tracking)
 
 - Same bubble quiz experience — select answers using **gaze direction** and **blink detection** instead of hand gestures.
 - Accessible and hands-free option for review practice.
@@ -27,7 +27,7 @@ Redefining the web learning experience with WebAI. An open-source, fully client-
 - Assemble Python code from token fragments using **hand gestures** or click/tap.
 - Build correct snippets by pointing and selecting tokens over your webcam feed.
 
-### Problems Mode — Coding Practice
+### Problems Mode: Coding Practice
 
 - Real coding problems (Two Sum, Valid Parentheses, Merge Intervals, etc.) with prompt, constraints, and examples.
 - **Sketch pad** for drawing pseudocode or diagrams (touch-friendly canvas).
